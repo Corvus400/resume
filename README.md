@@ -34,6 +34,10 @@
 
 <details><summary>2022年01月 - 2022年06月 / BtoC / 新規動画配信サービスアプリ開発</summary>
 
+# 触れた技術スタック
+
+- Android TV, Kotlin, GraphQL, Apollo Client, Kotlin CoroutineKotlin Multiplatform Mobile, ExoPlayer, LiveData, Kotlin Flow, Koin, MVVM, DDD, Mermaid, PlantUML, JavaScript, Node.js
+
 # 概要
 - 既存動画配信サービスアプリを置き換えるためのAndroid TV開発
 - Kotlin Multiplatform Mobile(KMM)を利用したマルチモジュール/マルチフレームワーク構成
@@ -76,6 +80,10 @@
 </details>
 
 <details><summary>2021年06月 - 2021年12月 / BtoC / 歩数計シリーズアプリ開発</summary>
+
+# 触れた技術スタック
+
+- Android Mobile, Kotlin, LiveData, Room, Dagger, Kotlin Coroutines, Kotlin Flow, DataBinding, Realm, Flipper, OneSignal
 
 # 概要
 - 歩数計シリーズアプリ開発(Android)
@@ -120,6 +128,10 @@
 
 <details><summary>2020年04月 - 2020年06月 / CtoC / 旅行口コミアプリ開発</summary>
 
+# 触れた技術スタック
+
+- Android Mobile, Kotlin, iOS, Swift, Clean Architecture, Redux, DDD, Navigator, Spek2, MockK, Mockito, Adjust, Repro, Crashlytics, DataBinding
+
 # 概要
 - 旅行先の口コミ掲載アプリ開発
 - CleanArchitecutre・Redux・DDDのコンビネーション構成に沿って機能追加を担当
@@ -146,6 +158,10 @@
 </details>
 
 <details><summary>2019年07月 - 2020年03月 / BtoCtoC / 人材系アプリ開発</summary>
+
+# 触れた技術スタック
+
+- Android Mobile, Kotlin, Java, Clean Architecture, RxJava, DbFlow, Room, iOS, Swift, Adjust, Repro
 
 # 概要
 - 成功報酬型人材紹介アプリ開発
@@ -179,6 +195,10 @@
 </details>
 
 <details><summary>2019年04月 - 2019年06月 / BtoB / タクシー乗務員業務用アプリ開発</summary>
+
+# 触れた技術スタック
+
+- Android Mobile, Kotlin, DeviceOwner, ExoPlayer, AudioFocus, Service, Kotlin Coroutine, Timber, Kibana, Espresso
 
 # 概要
 - MaaS大手(現在は合併社名変更)の乗務員用アプリ開発
@@ -240,6 +260,10 @@
 - アーキテクチャはMVC
 - 出社での業務
 
+# 触れた技術スタック
+
+- iOS, Swift, Carthage, Android Mobile, Kotlin, Bluetooth
+
 # 担当
 - 1-4人チームのiOS側を担当
 
@@ -260,6 +284,10 @@
 </details>
 
 <details><summary>2017年06月 - 2017年11月 / BtoC / 空調機・化学製品メーカーの製品用リモコンアプリ開発</summary>
+
+# 触れた技術スタック
+
+- Android Mobile, Java, Glide
 
 # 概要
 - 大手空調機・化学製品メーカーのエアコン・空気清浄機のリモコン(宅内・宅外)アプリ開発のAndroid側を担当
@@ -376,6 +404,10 @@
 </details>
 
 <details><summary>2015年01月 - 2016年02月 / BtoC / 育成シュミレーションアプリ開発</summary>
+
+# 触れた技術スタック
+
+- Cocos2d-x, Android Mobile, iOS, C++, Java, Objective-C, ニフクラ mobile backend
 
 # 概要
 - 自社開発の昆虫育成シュミレーションアプリを企画・開発
