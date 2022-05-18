@@ -32,7 +32,7 @@
 - 企業名等は機微情報なので入れていません
   - 面談時等に口頭でお伝えする事は可能です
 
-<details><summary>2022年01月 - 2022年06月 / 新規動画配信サービスアプリ開発</summary>
+<details><summary>2022年01月 - 2022年06月 / BtoC / 新規動画配信サービスアプリ開発</summary>
 
 # 概要
 - 既存動画配信サービスアプリを置き換えるためのAndroid TV開発
@@ -75,7 +75,7 @@
 
 </details>
 
-<details><summary>2021年06月 - 2021年12月 / 歩数計シリーズアプリ開発</summary>
+<details><summary>2021年06月 - 2021年12月 / BtoC / 歩数計シリーズアプリ開発</summary>
 
 # 概要
 - 歩数計シリーズアプリ開発(Android)
@@ -106,7 +106,7 @@
 
 </details>
 
-<details><summary>2020年10月 - 2021年03月 / お薬手帳アプリ開発</summary>
+<details><summary>2020年10月 - 2021年03月 / BtoBtoC / お薬手帳アプリ開発</summary>
 
 # 概要
 
@@ -118,7 +118,7 @@
 
 </details>
 
-<details><summary>2020年04月 - 2020年06月 / 旅行口コミアプリ開発</summary>
+<details><summary>2020年04月 - 2020年06月 / CtoC / 旅行口コミアプリ開発</summary>
 
 # 概要
 - 旅行先の口コミ掲載アプリ開発
@@ -145,7 +145,7 @@
 
 </details>
 
-<details><summary>2019年07月 - 2020年03月 / 人材系アプリ開発</summary>
+<details><summary>2019年07月 - 2020年03月 / BtoCtoC / 人材系アプリ開発</summary>
 
 # 概要
 - 成功報酬型人材紹介アプリ開発
@@ -178,7 +178,7 @@
 
 </details>
 
-<details><summary>2019年04月 - 2019年06月 / タクシー乗務員業務用アプリ開発</summary>
+<details><summary>2019年04月 - 2019年06月 / BtoB / タクシー乗務員業務用アプリ開発</summary>
 
 # 概要
 - MaaS大手(現在は合併社名変更)の乗務員用アプリ開発
@@ -209,7 +209,7 @@
 
 </details>
 
-<details><summary>2018年12月 - 2019年03月 / 仮想通貨クライアントアプリ開発</summary>
+<details><summary>2018年12月 - 2019年03月 / BtoC / 仮想通貨クライアントアプリ開発</summary>
 
 # 概要
 
@@ -220,7 +220,7 @@
 
 </details>
 
-<details><summary>2018年04月 - 2018年05月 / ローカル仮想通貨アプリ開発</summary>
+<details><summary>2018年04月 - 2018年05月 / BtoB / ローカル仮想通貨アプリ開発</summary>
 
 # 概要
 
@@ -231,7 +231,7 @@
 
 </details>
 
-<details><summary>2017年11月 - 2018年03月 / 化学メーカーのHEMSアプリ開発</summary>
+<details><summary>2017年11月 - 2018年03月 / BtoC / 化学メーカーのHEMSアプリ開発</summary>
 
 # 概要
 - Home Energy Management Systemアプリ開発
@@ -259,7 +259,7 @@
 
 </details>
 
-<details><summary>2017年06月 - 2017年11月 / 空調機・化学製品メーカーの製品用リモコンアプリ開発</summary>
+<details><summary>2017年06月 - 2017年11月 / BtoC / 空調機・化学製品メーカーの製品用リモコンアプリ開発</summary>
 
 # 概要
 - 大手空調機・化学製品メーカーのエアコン・空気清浄機のリモコン(宅内・宅外)アプリ開発のAndroid側を担当
@@ -290,7 +290,7 @@
 
 </details>
 
-<details><summary>2017年02月 - 2017年05月 / 配送事業者のアプリ開発</summary>
+<details><summary>2017年02月 - 2017年05月 / BtoB / 配送事業者のアプリ開発</summary>
 
 # 概要
 
@@ -301,7 +301,7 @@
 
 </details>
 
-<details><summary>2016年06月 - 2017年01月 / ECサイトアプリ開発</summary>
+<details><summary>2016年06月 - 2017年01月 / BtoC / ECサイトアプリ開発</summary>
 
 # 概要
 - 大手コンビニ事業者が、複数アプリで提供していたサービスを統合する事を目的とするアプリの開発
@@ -329,7 +329,7 @@
 
 </details>
 
-<details><summary>2016年03月 - 2016年06月 / 適正診断アプリ開発</summary>
+<details><summary>2016年03月 - 2016年06月 / BtoC / 適正診断アプリ開発</summary>
 
 # 概要
 
@@ -339,7 +339,7 @@
 
 </details>
 
-<details><summary>2016年02月 - 2016年03月 / Androidビーコンアプリ開発</summary>
+<details><summary>2016年02月 - 2016年03月 / BtoB / Androidビーコンアプリ開発</summary>
 
 # 概要
 
@@ -347,7 +347,7 @@
 
 </details>
 
-<details><summary>2016年01月 - 2016年02月 / プログラミング教育講師・チューター</summary>
+<details><summary>2016年01月 - 2016年02月 / BtoC / プログラミング教育講師・チューター</summary>
 
 # 概要
 
@@ -356,7 +356,7 @@
 
 </details>
 
-<details><summary>2015年11月 - 2016年05月 / 遺言動画保存アプリ開発</summary>
+<details><summary>2015年11月 - 2016年05月 / BtoC / 遺言動画保存アプリ開発</summary>
 
 # 概要
 
@@ -365,7 +365,7 @@
 
 </details>
 
-<details><summary>2015年02月 - 2015年03月 / 新入社員向けプログラミング講義教師</summary>
+<details><summary>2015年02月 - 2015年03月 / BtoB / 新入社員向けプログラミング講義教師</summary>
 
 # 概要
 
@@ -375,7 +375,7 @@
 
 </details>
 
-<details><summary>2015年01月 - 2016年02月 / 育成シュミレーションアプリ開発</summary>
+<details><summary>2015年01月 - 2016年02月 / BtoC / 育成シュミレーションアプリ開発</summary>
 
 # 概要
 - 自社開発の昆虫育成シュミレーションアプリを企画・開発
