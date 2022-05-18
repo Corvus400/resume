@@ -117,7 +117,7 @@
 
 </details>
 
-<details><summary>2020年4月 - 2020年6月 / 旅行口コミアプリ開発</summary>
+<details><summary>2020年04月 - 2020年06月 / 旅行口コミアプリ開発</summary>
 
 # 概要
 - 旅行先の口コミ掲載アプリ開発
