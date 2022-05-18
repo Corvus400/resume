@@ -32,7 +32,7 @@
 - 企業名等は機微情報なので入れていません
   - 面談時等に口頭でお伝えする事は可能です
 
-<details><summary>2022年01月 - 2022年06月 / BtoC / 新規動画配信サービスアプリ開発</summary>
+<details><summary>2022年01月 - 2022年06月 / BtoC / 新規動画配信サービスアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
@@ -80,7 +80,7 @@
 
 </details>
 
-<details><summary>2021年06月 - 2021年12月 / BtoC / 歩数計シリーズアプリ開発</summary>
+<details><summary>2021年06月 - 2021年12月 / BtoC / 歩数計シリーズアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
@@ -129,7 +129,7 @@
 
 </details>
 
-<details><summary>2020年04月 - 2020年06月 / CtoC / 旅行口コミアプリ開発</summary>
+<details><summary>2020年04月 - 2020年06月 / CtoC / 旅行口コミアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
@@ -161,7 +161,7 @@
 
 </details>
 
-<details><summary>2019年07月 - 2020年03月 / BtoCtoC / 人材系アプリ開発</summary>
+<details><summary>2019年07月 - 2020年03月 / BtoCtoC / 人材系アプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
@@ -199,7 +199,7 @@
 
 </details>
 
-<details><summary>2019年04月 - 2019年06月 / BtoB / タクシー乗務員業務用アプリ開発</summary>
+<details><summary>2019年04月 - 2019年06月 / BtoB / タクシー乗務員業務用アプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
@@ -259,7 +259,7 @@
 
 </details>
 
-<details><summary>2017年11月 - 2018年03月 / BtoC / 化学メーカーのHEMSアプリ開発</summary>
+<details><summary>2017年11月 - 2018年03月 / BtoC / 化学メーカーのHEMSアプリ開発 :+1: </summary>
 
 # 概要
 - Home Energy Management Systemアプリ開発
@@ -292,7 +292,7 @@
 
 </details>
 
-<details><summary>2017年06月 - 2017年11月 / BtoC / 空調機・化学製品メーカーの製品用リモコンアプリ開発</summary>
+<details><summary>2017年06月 - 2017年11月 / BtoC / 空調機・化学製品メーカーの製品用リモコンアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
@@ -340,7 +340,7 @@
 
 </details>
 
-<details><summary>2016年06月 - 2017年01月 / BtoC / ECサイトアプリ開発</summary>
+<details><summary>2016年06月 - 2017年01月 / BtoC / ECサイトアプリ開発 :+1: </summary>
 
 # 概要
 - 大手コンビニ事業者が、複数アプリで提供していたサービスを統合する事を目的とするアプリの開発
@@ -424,7 +424,7 @@
 
 </details>
 
-<details><summary>2015年01月 - 2016年02月 / BtoC / 育成シュミレーションアプリ開発</summary>
+<details><summary>2015年01月 - 2016年02月 / BtoC / 育成シュミレーションアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
