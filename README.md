@@ -26,6 +26,26 @@
 | C           | (C++学習前のキャッチアップとして)1ヶ月相当    |
 | RPG3        | (新卒企業で)5ヶ月                           |
 
+## 業務外活動
+
+<details><summary>Flutter学習</summary>
+
+- [Flutter for Android developers](https://docs.flutter.dev/get-started/flutter-for/android-devs), [Flutter Layout Cheat Sheet](https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e), [Flutter Gallery](https://gallery.flutter.dev/#/) の内容を踏まえて学習
+  - https://github.com/Corvus400/my-flutter-cook-book-animation-app
+  - https://github.com/Corvus400/my-flutter-for-android-developers-app
+  - https://github.com/Corvus400/my_flutter_layout_cheat_seat_app
+  - https://github.com/Corvus400/my_flutter_animation_tutorial_app
+  - https://github.com/Corvus400/my-flutter-cook-book-effects-app
+
+</details>
+
+<details><summary>Android Developers の翻訳動画を作成</summary>
+
+- 参画先のキャッチアップ時間で話題として提供
+  - https://zenn.dev/todayama_r
+
+</details>
+
 ## 携わったプロジェクト
 
 - **各プロジェクトをクリックすると詳細が展開されます**
