@@ -83,14 +83,14 @@ css: |-
 > 企業名等は機微情報なので入れていません(面談時等に口頭でお伝えする事は可能です)
 
 <!-- <details open><summary>2022年01月 - 2022年06月 / BtoC / 新規動画配信サービスアプリ開発 :+1: </summary> -->
-<details><summary>2022年01月 - 2022年06月 / BtoC / 新規動画配信サービスアプリ開発 :+1: </summary>
+<details><summary>2022年01月 - 2022年06月 / BtoC / 合同会社DMM.com / 動画配信サービスアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
 - Android TV, Kotlin, GraphQL, Apollo Client, Kotlin CoroutineKotlin Multiplatform Mobile, ExoPlayer, LiveData, Kotlin Flow, Koin, MVVM, DDD, Mermaid, PlantUML, JavaScript, Node.js
 
 # 概要
-- 既存動画配信サービスアプリを置き換えるためのAndroid TV開発
+- 動画配信サービスアプリを置き換えるためのAndroid TV開発
 - Kotlin Multiplatform Mobile(KMM)を利用したマルチモジュール/マルチフレームワーク構成
 - GraphQL(BFF)のQueryとMutation部分も設計・実装
 - 各種スキーマの定義も実施
@@ -134,7 +134,7 @@ css: |-
 <div class="page-break"></div>
 
 <!-- <details open><summary>2021年06月 - 2021年12月 / BtoC / 歩数計シリーズアプリ開発 :+1: </summary> -->
-<details><summary>2021年06月 - 2021年12月 / BtoC / 歩数計シリーズアプリ開発 :+1: </summary>
+<details><summary>2021年06月 - 2021年12月 / BtoC / メドピア株式会社 / 歩数計シリーズアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
@@ -173,7 +173,7 @@ css: |-
 <div class="page-break"></div>
 
 <!-- <details open><summary>2020年10月 - 2021年03月 / BtoBtoC / お薬手帳アプリ開発</summary> -->
-<details><summary>2020年10月 - 2021年03月 / BtoBtoC / お薬手帳アプリ開発</summary>
+<details><summary>2020年10月 - 2021年03月 / BtoBtoC / 株式会社くすりの窓口 / お薬手帳アプリ開発</summary>
 
 # 概要
 
@@ -189,7 +189,7 @@ css: |-
 <div class="page-break"></div>
 
 <!-- <details open><summary>2020年04月 - 2020年06月 / CtoC / 旅行口コミアプリ開発 :+1: </summary> -->
-<details><summary>2020年04月 - 2020年06月 / CtoC / 旅行口コミアプリ開発 :+1: </summary>
+<details><summary>2020年04月 - 2020年06月 / CtoC / 株式会社インタースペース / 旅行口コミアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
@@ -224,7 +224,7 @@ css: |-
 <div class="page-break"></div>
 
 <!-- <details open><summary>2019年07月 - 2020年03月 / BtoCtoC / 人材系アプリ開発 :+1: </summary> -->
-<details><summary>2019年07月 - 2020年03月 / BtoCtoC / 人材系アプリ開発 :+1: </summary>
+<details><summary>2019年07月 - 2020年03月 / BtoCtoC / 株式会社リブセンス / 人材系アプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
@@ -265,7 +265,7 @@ css: |-
 <div class="page-break"></div>
 
 <!-- <details open><summary>2019年04月 - 2019年06月 / BtoB / タクシー乗務員業務用アプリ開発 :+1: </summary> -->
-<details><summary>2019年04月 - 2019年06月 / BtoB / タクシー乗務員業務用アプリ開発 :+1: </summary>
+<details><summary>2019年04月 - 2019年06月 / BtoB / 株式会社Mobility Technologies(旧JapanTaxi株式会社) / タクシー乗務員業務用アプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
@@ -452,7 +452,7 @@ css: |-
 <div class="page-break"></div>
 
 <!-- <details open><summary>2016年03月 - 2016年06月 / BtoC / 適正診断アプリ開発</summary> -->
-<details><summary>2016年03月 - 2016年06月 / BtoC / 適正診断アプリ開発</summary>
+<details><summary>2016年03月 - 2016年06月 / BtoC / 株式会社ハコブネ / 適正診断アプリ開発</summary>
 
 # 概要
 
@@ -466,7 +466,7 @@ css: |-
 </details>
 
 <!-- <details open><summary>2016年02月 - 2016年03月 / BtoB / Androidビーコンアプリ開発</summary> -->
-<details><summary>2016年02月 - 2016年03月 / BtoB / Androidビーコンアプリ開発</summary>
+<details><summary>2016年02月 - 2016年03月 / BtoB / 株式会社ハコブネ / Androidビーコンアプリ開発</summary>
 
 # 概要
 
@@ -478,7 +478,7 @@ css: |-
 </details>
 
 <!-- <details open><summary>2016年01月 - 2016年02月 / BtoC / プログラミング教育講師・チューター</summary> -->
-<details><summary>2016年01月 - 2016年02月 / BtoC / プログラミング教育講師・チューター</summary>
+<details><summary>2016年01月 - 2016年02月 / BtoC / 株式会社ハコブネ / プログラミング教育講師・チューター</summary>
 
 # 概要
 
@@ -488,7 +488,7 @@ css: |-
 </details>
 
 <!-- <details open><summary>2015年11月 - 2016年05月 / BtoC / 遺言動画保存アプリ開発</summary> -->
-<details><summary>2015年11月 - 2016年05月 / BtoC / 遺言動画保存アプリ開発</summary>
+<details><summary>2015年11月 - 2016年05月 / BtoC / 株式会社ハコブネ / 遺言動画保存アプリ開発</summary>
 
 # 概要
 
@@ -503,7 +503,7 @@ css: |-
 <div class="page-break"></div>
 
 <!-- <details open><summary>2015年02月 - 2015年03月 / BtoB / 新入社員向けプログラミング講義教師</summary> -->
-<details><summary>2015年02月 - 2015年03月 / BtoB / 新入社員向けプログラミング講義教師</summary>
+<details><summary>2015年02月 - 2015年03月 / BtoB / 株式会社ハコブネ / 新入社員向けプログラミング講義教師</summary>
 
 # 概要
 
@@ -516,7 +516,7 @@ css: |-
 <div class="page-break"></div>
 
 <!-- <details open><summary>2015年01月 - 2016年02月 / BtoC / 育成シュミレーションアプリ開発 :+1: </summary> -->
-<details><summary>2015年01月 - 2016年02月 / BtoC / 育成シュミレーションアプリ開発 :+1: </summary>
+<details><summary>2015年01月 - 2016年02月 / BtoC / 株式会社ハコブネ / 育成シュミレーションアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
 
