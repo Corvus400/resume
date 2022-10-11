@@ -46,7 +46,7 @@ css: |-
 
 - 9/6のリポジトリ公開から10/2までの26日間で[大小様々なPRを38個](https://github.com/DroidKaigi/conference-app-2022/pulls?q=is%3Apr+author%3ACorvus400+)作成
   - その内2個にリポジトリオーナーの[takahirom](https://github.com/takahirom)さんより[awesomeタグ](https://github.com/DroidKaigi/conference-app-2022/pulls?q=is%3Apr+author%3ACorvus400+is%3Aclosed+label%3Aawesome)を頂きました
-- [Issueも16個消化し内5個がhigi priorityのもの](https://github.com/DroidKaigi/conference-app-2022/issues?q=is%3Aissue+assignee%3ACorvus400)でした
+- [Issueも16個消化し内5個がhigh priorityのもの](https://github.com/DroidKaigi/conference-app-2022/issues?q=is%3Aissue+assignee%3ACorvus400)でした
 - [DroidKaigi2022 Day1 の Welcome Talk　にてオーガナイザーの方々と並ぶ形でご紹介頂きました](https://www.youtube.com/watch?v=P8BZw_yCokc&t=5327s)
 
 ![Insights](images/Insights.png)
