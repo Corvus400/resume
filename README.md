@@ -193,11 +193,12 @@ css: |-
 
 # 触れた技術スタック
 
-- Android Mobile, Kotlin, iOS, Swift, Clean Architecture, Redux, DDD, Navigator, Spek2, MockK, Mockito, Adjust, Repro, Crashlytics, DataBinding
+- Android Mobile, Kotlin, iOS, Swift, Redux, DDD, Navigator, Spek2, MockK, Mockito, Adjust, Repro, Crashlytics, DataBinding
 
 # 概要
 - 旅行先の口コミ掲載アプリ開発
-- CleanArchitecutre・Redux・DDDのコンビネーション構成に沿って機能追加を担当
+- Redux・DDDのコンビネーション構成に沿って機能追加を担当
+- アーキテクチャーはRobert C. MartinのClean Architectureを参考としたものを採用
 - 画面の追加はNavigationコンポーネントにより実装(1Activity多Fragment)
 - テスト(Spek2)の追加も機能追加と同時に実施
 - app,ui,domain,infrastructureからなるマルチモジュール構造
@@ -228,11 +229,12 @@ css: |-
 
 # 触れた技術スタック
 
-- Android Mobile, Kotlin, Java, Clean Architecture, RxJava, DbFlow, Room, iOS, Swift, Adjust, Repro
+- Android Mobile, Kotlin, Java, RxJava, DbFlow, Room, iOS, Swift, Adjust, Repro
 
 # 概要
 - 成功報酬型人材紹介アプリ開発
-- CleanArchitectureに沿った機能追加・改修・ABテスト対応
+- アーキテクチャーはRobert C. MartinのClean Architectureを参考としたものを採用
+- 機能追加・改修・ABテスト対応を実施
 - RxJava1系から2系への移行とKotlin化対応も施策対応と並行して実施
 - DbFlowからRoomへのマイグレーション対応も一部実施
 - 正社員の方とのディスカッションに参加し要件定義部分から関わる開発スタイル
