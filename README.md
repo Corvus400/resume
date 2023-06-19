@@ -79,6 +79,43 @@ css: |-
 > **Note**
 > 各プロジェクトをクリックすると詳細が展開されます
 
+<!-- <details open><summary>2022年12月 - 現在 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary> -->
+<details><summary>2022年12月 - 現在 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary>
+
+# 触れた技術スタック
+
+- Kotlin, Jetpack Compose, Android, Protocol Buffers, RESTAPI, Kotlin Coroutine, MVVM, LiveData, flow, koin, Lokalise
+
+# 概要
+- ストアURLは此方( https://play.google.com/store/apps/details?id=net.wrightflyer.le.reality&hl=ja&gl=US&pli=1 )
+- マルチモジュール構成を取っておりfeature/libraries/data/coreから成る
+- UaaL( Unity as a Library )を採用しておりUnityを使用してアバターの表示を行いUnityの上にネイティブのUIを表示する構造となっている
+- 12言語対応のためLokaliseというサービスを使用しstrings.xmlは手動ではなくサービスから出力されたものを使用する形となっている
+- 通信クライアント部分が別リポジトリで管理されており部分的にProtocol Buffersを使用
+- 新機能開発の合間に整理されていない状態となっていたドキュメントの整理などチーム全体の効率を上げるタスクも自ら実行
+
+# 担当
+- REALITY Androidアプリの新機能開発・保守を主に実施
+- チーム人数は10人
+
+# 課題
+- 他社ではチャットへの流入を増やすためのシェア導線が準備されているがREALITYではアプリ外シェアがメインとなっており流入が少ない状態となっていた
+- デフォルトで通知がONになっておりフォロー通知が頻繁に飛ぶため通知をOFFにされるケースが多い状態となっていた　加えて通知をOFFにするとONに戻すきっかけが存在していない
+- Plural機能が使用されていないため単位の単数複数形が存在する言語の翻訳品質が低下していた
+- GitHubのWikiに情報が集積されているものの整理されておらず必要な情報に辿り着くことが難しい状態となっていた
+
+# 取り組み
+- JetpackComposeによる画面の作成・REST APIの追加を実施
+- JetpackComposeではpluralStringResourceを使用しXMLではgetQuantityStringを使用する事でLokaliseから出力されるリソースを表示出来るようにした
+- チーム内にて協議しプロジェクト内にDocsフォルダを作成しWikiとDocsの役割分担を行い整理を実施
+
+# 工夫した点
+- DroidKaigi2022での貢献を通して得た知見を活用した
+
+</details>
+
+<div class="page-break"></div>
+
 <!-- <details open><summary>2022年01月 - 2022年06月 / BtoC / 新規動画配信サービスアプリ開発 :+1: </summary> -->
 <details><summary>2022年01月 - 2022年06月 / BtoC / 合同会社DMM.com / 動画配信サービスアプリ開発 :+1: </summary>
 
@@ -127,8 +164,6 @@ css: |-
 - 参画前から[GraphQL](https://github.com/Corvus400/my-server-for-graphql-learning)やJetpack ComposeをUdemyの動画を購入して翻訳して見ながら実装をしてみる等してキャッチアップしていた
 
 </details>
-
-<div class="page-break"></div>
 
 <!-- <details open><summary>2021年06月 - 2021年12月 / BtoC / 歩数計シリーズアプリ開発 :+1: </summary> -->
 <details><summary>2021年06月 - 2021年12月 / BtoC / メドピア株式会社 / 歩数計シリーズアプリ開発 :+1: </summary>
