@@ -23,23 +23,33 @@ css: |-
 
 ## 言語の経験歴
 
-|     名称    |                    経験歴                  |
-|:------------|:------------------------------------------|
-| Kotlin      | 4年強(56ヶ月)                              |
-| Swift       | 5ヶ月                                      |
-| Dart        | 2ヶ月                                      |
-| C++         | 1.5年(18ヶ月)                              |
-| Java        | 3年(35ヶ月)                                |
-| JavaScript  | (業務でのモック修正や個人的な趣味で)6ヶ月相当 |
+|     名称    | 経験歴                          |
+|:------------|:-----------------------------|
+| Kotlin      | 4年強(56ヶ月)                    |
+| Swift       | 6ヶ月                          |
+| Dart        | 2ヶ月                          |
+| C++         | 1.5年(18ヶ月)                   |
+| Java        | 3年(35ヶ月)                     |
+| JavaScript  | (業務でのモック修正や個人的な趣味で)6ヶ月相当     |
 | Objective-C | (Cocos2d-xのネイティブ連携記述時で)1ヶ月相当 |
-| Python      | (大学在学中)3ヶ月相当                       |
-| PHP         | (大学在学中)3ヶ月相当                       |
-| C           | (C++学習前のキャッチアップとして)1ヶ月相当    |
-| RPG3        | (新卒企業で)5ヶ月                           |
+| Python      | (大学在学中)3ヶ月相当                 |
+| PHP         | (大学在学中)3ヶ月相当                 |
+| C           | (C++学習前のキャッチアップとして)1ヶ月相当     |
+| RPG3        | (新卒企業で)5ヶ月                   |
 
 <div class="page-break"></div>
 
 ## 業務外活動
+
+<!-- <details open><summary>DroidKaigi2023コントリビュート</summary> -->
+<details><summary>DroidKaigi2023コントリビュート :+1: </summary>
+
+- 8/14のリポジトリ公開から9/13までの30日間コントリビュートしました
+- 結果と貢献を通じて何を学んだかは[Zenn](https://zenn.dev/todayama_r/articles/404e358eaac1f1)に纏めておりますのでそちらをご覧ください
+- 今年も前年同様[Welcome Talkにてオーガナイザーの方々と並ぶ形でご紹介頂きました](https://x.com/Todayama_R/status/1702496851340193816?s=20)
+- 今年は去年より貢献順位が一つ上がり[Takahiromさんに並ぶ二位の位置を占めることが出来ました](https://twitter.com/Todayama_R/status/1702496604190847010)
+
+</details>
 
 <!-- <details open><summary>DroidKaigi2022コントリビュート</summary> -->
 <details><summary>DroidKaigi2022コントリビュート :+1: </summary>
@@ -79,8 +89,8 @@ css: |-
 > **Note**
 > 各プロジェクトをクリックすると詳細が展開されます
 
-<!-- <details open><summary>2022年12月 - 現在 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary> -->
-<details><summary>2022年12月 - 現在 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary>
+<!-- <details open><summary>2022年12月 - 2023年8月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary> -->
+<details><summary>2022年12月 - 2023年8月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary>
 
 # 触れた技術スタック
 
