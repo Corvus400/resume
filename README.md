@@ -86,8 +86,11 @@ css: |-
 
 ## 携わったプロジェクト
 
-> **Note**
-> 各プロジェクトをクリックすると詳細が展開されます
+{% note %}
+
+**Note:** 各プロジェクトをクリックすると詳細が展開されます
+
+{% endnote %}
 
 <!-- <details open><summary>2022年12月 - 2023年8月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary> -->
 <details><summary>2022年12月 - 2023年8月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary>
