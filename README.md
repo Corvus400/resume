@@ -15,7 +15,7 @@ css: |-
 
 |      名称      | 経験歴        |
 |:---------------|:-----------|
-| Android Mobile | 5年半(68ヶ月)  |
+| Android Mobile | 6年弱(74ヶ月)  |
 | Android TV     | 6ヶ月        |
 | iOS            | 6ヶ月        |
 | Flutter        | 2ヶ月        |
@@ -25,7 +25,7 @@ css: |-
 
 |     名称    | 経験歴                          |
 |:------------|:-----------------------------|
-| Kotlin      | 4年強(56ヶ月)                    |
+| Kotlin      | 5年弱(62ヶ月)                    |
 | Swift       | 6ヶ月                          |
 | Dart        | 2ヶ月                          |
 | C++         | 1.5年(18ヶ月)                   |
@@ -88,6 +88,82 @@ css: |-
 
 > [!TIP]
 > 各プロジェクトをクリックすると詳細が展開されます
+
+<!-- <details open><summary>2023年9月 - 現在 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守 :+1: </summary> -->
+<details><summary>2023年9月 - 現在 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守 :+1: </summary>
+
+# 触れた技術スタック
+
+- Kotlin, Jetpack Compose, View base(Jetpack ComposeではないXML), Android, RESTAPI, Kotlin Coroutine, MVVM, LiveData, flow, Dagger2, androidx.paging, Robolectric, JUnit,
+
+# 概要
+- ストアは[此方]( https://play.google.com/store/apps/details?id=beartail.dr.keihi&hl=ja&gl=US&pli=1 )
+- マルチモジュール構成(app/core/feature形式ではない)
+- HiltではなくDagger2を使用してDIが行われている
+- Full-ComposeではなくComposableとViewベースのUIとが混在
+
+# 担当
+
+- TOKIUM経費精算システムアプリの新機能開発・保守を主に実施
+- チーム人数は3人
+
+# 課題
+
+- ViewModelの構造が一般的なAndroidアプリとかけ離れておりViewModelがViewModelを継承・依存として持つ構造になっておりそのままではどこからどのようにしてデータを取得するのか把握が困難な状態となっている
+- 横連携・情報伝達・開発フロー等アプリのコード以外の部分にも多数問題が存在しそれらにより開発速度が上がらない状態が何年も続いている
+  - 施策の進行時もクリティカルパスの把握など通常のプロジェクト進行で必須となる事前準備がほぼ不足しており施策の進行中に稼働を増やすことでしかカバー出来ない状態になることが多々発生
+  - iOS側でサイレントで対応・修正している内容がAndroid側に連携されず本来発生しえなかった対応コストが余分に発生
+- デザイナーが実質不在で週一で稼働する業務委託の方しか居ないためFigmaが全く整備されておらず存在するFigmaも殆どの画面がスクリーンショットを貼り付けるだけのほぼ意味の無い状態になっている
+- Figmaも含めドキュメントが無いor存在したとしても未整備のため重複して存在する等のため正しい仕様の把握が困難な状態となっておりコードが仕様の状態が何年も継続している
+
+# 取り組み
+
+- ViewModelの構造を一般的なAndroidアプリに近づけた
+  - 不要なViewModelの依存・継承を排除
+  - Repository/UseCaseからデータのCRUDを行う修正を主導
+- Robolectricを使ったユニットテストを追加(自分が追加したのは199件中154件)
+  - JVM上で動作するためandroidTestより高速(199件を約13秒)にassertionテストが実行可能
+  - テスト内容としてはnull/non-null/境界値をチェックすることでUIが仕様通りに表示されているかをチェックする
+  - Previewアノテーションで表示しているパターン網羅をCI上で自動チェックするのが目的
+  - 元々テストを一切追加しないプロジェクト進行になっていた
+  - しかし今後のことも考えせめてPreviewアノテーションによって目視で確認している部分だけでも自動テストで担保するべきだと考えテストの導入を主導
+  - DisplayNameを使って日本語でテストの説明を入れて分かりやすくしている(メソッド名称は英語)
+  - painter等に何がセットされているかは直接確認する方法は無いのでそのような場合はcontentDescriptionにセットされた値をチェックすることで代替としている
+- Screen・Screenで利用するComposable・ボトムシートを担当し作成
+  - 3画面・9部品・5つのボトムシートコンテンツ
+  - それぞれ表示パターンを目視で素早く確認出来るようにPreviewアノテーションで境界値によるUI変化をパターン網羅するように表示させている
+- DroidKaigiやNowInAndroidの採用した方が良いパターンを導入し他の方にもそれに合わせてもらうよう主導
+  - ViewModelで[buildUiState](https://github.com/DroidKaigi/conference-app-2023/blob/f255ed2f6f07f9f6f83bc3b15384b9bcf001d8e8/core/ui/src/commonMain/kotlin/io/github/droidkaigi/confsched2023/ui/UiStateBuilder.kt#L9)を使用する
+  - ダミーデータを[fake(),fakes()メソッド](https://github.com/DroidKaigi/conference-app-2023/blob/f255ed2f6f07f9f6f83bc3b15384b9bcf001d8e8/core/model/src/commonMain/kotlin/io/github/droidkaigi/confsched2023/model/Timetable.kt#L104)を作成して提供
+  - RepositoryをInterfaceにしてData/Fakeの形式で提供
+    - 他の新規追加ではないRepositoryはInterfaceを継承せず直にXXXRepositoryImplの形式で実装されている
+    - 今回新規追加した箇所ではFakeXXXRepositoryを用意したのでPreviewアノテーション・ユニットテスト両方で使用する際に役に立ちこれが功を奏した
+      - PagingDataをFlowで提供するメソッドなど
+- リファクタ・リアーキテクチャ計画の立案・ディスカッション・推進を主導
+  - 施策の進行に伴ってリファクタ・リアーキテクチャでの対応が困難だと判断しリプレースをするメリットを説明しそちらを行うように推進
+- 未整理だったSlackチャンネル・ドキュメント・Figmaの整理整頓を主導
+  - PullRequestテンプレートから不要な記述を削除し必要な記述を追加
+  - [JetpackComposeに関連しない同名のクラスがサジェストされないようにする](https://github.com/DroidKaigi/conference-app-2023/pull/589)
+  - 既に誰も見ていないbotの通知などが誰も止めずに何年も放置されていたので止める
+  - チャンネル名が統一されておらず見辛いため用途に合わせて変更
+  - GitHubの通知を行うチャンネルが存在せず手動でレビューをお願いしますというメンションを既存メンバーが常時飛ばしていたため専用チャンネルにGitHubアプリによるインテグレーションを追加
+  - DroidkaigiのFigmaのようにComponent化した部品を使って画面を作成するよう主導
+  - iOSがAndroidより先行して実装が完了していたためiOSのメンバーが作成したFigmaの内容構成に近くなるようComponent化した部品を用いて既存メンバーと協力してFigmaを作成
+    - 本来はデザイナーが担う役割だがデザイナーが居ないため開発メンバーでFigmaを作成
+  - メモ書き程度に収まっているNotionの仕様についての記述をテンプレートに沿ってビジネスサイド・開発メンバー双方がどこを見ればどこに何の情報が有るかを分かるようにするよう主導
+- 会議体や会議の進行方法の変更を提案し横連携を行えるようにした
+  - 朝会が別の会議と重なり重要なメンバーが参加出来ない日が多く機能していないため確実に空いている夕方に移動し夕会へ変更
+  - 横展開を先に行いその後主催者が各自の進捗を聞く流れとなるように変更
+- 段取り不足による工程の遅延・やり直しの発生が初期は非常に目立ったため仕様の確認と段取り方法(何をまず確認しなければならないか等)の伝授を既存メンバーに対して主導
+  - PERT図の導入なども提案
+- メンバーのレベルを高めるためDroidkaigiのPRから一つ選んでそれについて10分話す場を週に3回設けるよう主導
+  - 10分としたのは[ANDPADの取り組みの記事]( https://tech.andpad.co.jp/entry/2020/09/23/095120 )を見てのこと
+
+# 工夫した点
+
+- DroidKaigi2023での貢献を通して得た知見を活用した
+
+</details>
 
 <!-- <details open><summary>2022年12月 - 2023年8月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary> -->
 <details><summary>2022年12月 - 2023年8月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary>
