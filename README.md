@@ -15,7 +15,7 @@ css: |-
 
 |      名称      | 経験歴        |
 |:---------------|:-----------|
-| Android Mobile | 6年弱(74ヶ月)  |
+| Android Mobile | 6年半(78ヶ月)  |
 | Android TV     | 6ヶ月        |
 | iOS            | 6ヶ月        |
 | Flutter        | 2ヶ月        |
@@ -25,7 +25,7 @@ css: |-
 
 |     名称    | 経験歴                          |
 |:------------|:-----------------------------|
-| Kotlin      | 5年弱(62ヶ月)                    |
+| Kotlin      | 5年半(66ヶ月)                    |
 | Swift       | 6ヶ月                          |
 | Dart        | 2ヶ月                          |
 | C++         | 1.5年(18ヶ月)                   |
@@ -89,8 +89,46 @@ css: |-
 > [!TIP]
 > 各プロジェクトをクリックすると詳細が展開されます
 
-<!-- <details open><summary>2023年9月 - 現在 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守 :+1: </summary> -->
-<details><summary>2023年9月 - 現在 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守 :+1: </summary>
+<!-- <details open><summary>2024年5月 - 2024年8月 / BtoC / 株式会社ギフトモール（LUCHE GROUP） / Giftmallアプリ開発・保守 :+1: </summary> -->
+<details><summary>2024年5月 - 2024年8月 / BtoC / 株式会社ギフトモール（LUCHE GROUP） / Giftmallアプリ開発・保守 :+1: </summary>
+
+# 触れた技術スタック
+
+- Kotlin, Jetpack Compose, Android, RESTAPI, Kotlin Coroutine, RxJava, LiveData, MVVM, Dagger Hilt, MockK, Kotest, firebase
+
+# 概要
+- ストアは[此方](https://play.google.com/store/apps/details?id=jp.co.giftmall)
+- マルチモジュール構成を取っておりapp/feature/cross_domain/repository等から成る
+- WebViewとNativeの混合構成
+
+# 担当
+
+- GiftmallAndroidアプリのABテスト対応・保守を主に実施
+- チーム人数は3人
+
+# 課題
+
+- プロパーのAndroidエンジニアが1人で手が足りておらずABテスト対応などが人数が多いiOS側と比べ対応が間に合っていない
+- ABテスト対応後のコードの消し忘れなどで使われなくなったコードが多数残ったままになっている
+
+# 取り組み
+
+- Jetpack Composeで構成された画面のABテスト対応を主に実施
+- ABテスト対応で触った箇所でどこからも参照されていないコードをボーイスカウト・ルールに則り削除
+  - 削除が必要な行数が多い場合はタスクを作成し別PRで対応することでレビューし辛い状態にならないように対応
+- ABテスト対応時にキャッシュ(Singleton化されたFlowを持つ簡易キャッシュ)の既存バグを発見しそちらの修正も対応
+  - Flowが<Set<E>>を保持していたのでkey-valueで扱えるMapに変更することで対応
+
+# 工夫した点
+
+- DroidKaigi2023での貢献を通して得た知見を活用
+  - ex)ABテスト対応でハプティックフィードバックを導入する対応が有ったがDroidKaigiで同様の対応をしているPRを知っていたのでそちらを参照することで機能実装は数分で対応が完了
+  - [参考にしたPR](https://github.com/DroidKaigi/conference-app-2023/pull/1126)
+
+</details>
+
+<!-- <details open><summary>2023年9月 - 2024年5月 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守 :+1: </summary> -->
+<details><summary>2023年9月 - 2024年5月 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守 :+1: </summary>
 
 # 触れた技術スタック
 
