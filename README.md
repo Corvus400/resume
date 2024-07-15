@@ -94,7 +94,7 @@ css: |-
 
 # 触れた技術スタック
 
-- Kotlin, Jetpack Compose, Android, RESTAPI, Kotlin Coroutine, RxJava, LiveData, MVVM, Dagger Hilt, MockK, Kotest, firebase
+- Kotlin, Jetpack Compose, Android, RESTAPI, Kotlin Coroutine, RxJava, MVVM, Dagger Hilt, MockK, Kotest, firebase
 
 # 概要
 - ストアは[此方](https://play.google.com/store/apps/details?id=jp.co.giftmall)
