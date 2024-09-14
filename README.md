@@ -15,9 +15,9 @@ css: |-
 
 |      名称      | 経験歴        |
 |:---------------|:-----------|
-| Android Mobile | 6年半(78ヶ月)  |
+| Android Mobile | 6年半(79ヶ月)  |
 | Android TV     | 6ヶ月        |
-| iOS            | 6ヶ月        |
+| iOS            | 7ヶ月        |
 | Flutter        | 2ヶ月        |
 | Cocos2d-x      | 1.5年(18ヶ月) |
 
@@ -25,8 +25,8 @@ css: |-
 
 |     名称    | 経験歴                          |
 |:------------|:-----------------------------|
-| Kotlin      | 5年半(66ヶ月)                    |
-| Swift       | 6ヶ月                          |
+| Kotlin      | 5年半(67ヶ月)                    |
+| Swift       | 7ヶ月                          |
 | Dart        | 2ヶ月                          |
 | C++         | 1.5年(18ヶ月)                   |
 | Java        | 3年(35ヶ月)                     |
@@ -40,6 +40,17 @@ css: |-
 <div class="page-break"></div>
 
 ## 業務外活動
+
+<!-- <details open><summary>DroidKaigi2024コントリビュート</summary> -->
+<details><summary>DroidKaigi2024コントリビュート :+1: </summary>
+
+- 8/11のリポジトリ公開から9/10までの31日間コントリビュートしました
+- 結果と貢献を通じて何を学んだかはZennに纏めておりますのでそちらをご覧ください
+  - [DroidKaigi2024のカンファレンスアプリに107個のPRがマージされました(一ヶ月間継続貢献)](https://zenn.dev/todayama_r/articles/55ddcb366cbc50)
+- 3年連続[Welcome Talkにてオーガナイザーの方々と並ぶ形でご紹介頂きました](https://x.com/Todayama_R/status/1834398835327861168)
+- 今年も去年同様[Takahiromさんに並ぶ二位の位置を占めることが出来ました](https://x.com/Todayama_R/status/1834398443361763519)
+
+</details>
 
 <!-- <details open><summary>DroidKaigi2023コントリビュート</summary> -->
 <details><summary>DroidKaigi2023コントリビュート :+1: </summary>
