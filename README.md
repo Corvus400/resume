@@ -41,7 +41,6 @@ css: |-
 
 ## 業務外活動
 
-<!-- <details open><summary>DroidKaigi2024コントリビュート</summary> -->
 <details><summary>DroidKaigi2024コントリビュート :+1: </summary>
 
 - 8/11のリポジトリ公開から9/10までの31日間コントリビュートしました
@@ -52,7 +51,6 @@ css: |-
 
 </details>
 
-<!-- <details open><summary>DroidKaigi2023コントリビュート</summary> -->
 <details><summary>DroidKaigi2023コントリビュート :+1: </summary>
 
 - 8/14のリポジトリ公開から9/13までの30日間コントリビュートしました
@@ -62,7 +60,6 @@ css: |-
 
 </details>
 
-<!-- <details open><summary>DroidKaigi2022コントリビュート</summary> -->
 <details><summary>DroidKaigi2022コントリビュート :+1: </summary>
 
 - 9/6のリポジトリ公開から10/2までの26日間で[大小様々なPRを38個](https://github.com/DroidKaigi/conference-app-2022/pulls?q=is%3Apr+author%3ACorvus400+)作成
@@ -74,7 +71,6 @@ css: |-
 
 </details>
 
-<!-- <details open><summary>Flutter学習</summary> -->
 <details><summary>Flutter学習</summary>
 
 - [Flutter for Android developers](https://docs.flutter.dev/get-started/flutter-for/android-devs), [Flutter Layout Cheat Sheet](https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e), [Flutter Gallery](https://gallery.flutter.dev/#/) の内容を踏まえて学習
@@ -86,7 +82,6 @@ css: |-
 
 </details>
 
-<!-- <details open><summary>Android Developers の翻訳動画を作成</summary> -->
 <details><summary>Android Developers の翻訳動画を作成</summary>
 
 - 参画先のキャッチアップ時間で話題として提供 https://zenn.dev/todayama_r
@@ -100,7 +95,6 @@ css: |-
 > [!TIP]
 > 各プロジェクトをクリックすると詳細が展開されます
 
-<!-- <details open><summary>2024年5月 - 2024年8月 / BtoC / 株式会社ギフトモール（LUCHE GROUP） / Giftmallアプリ開発・保守 :+1: </summary> -->
 <details><summary>2024年5月 - 2024年8月 / BtoC / 株式会社ギフトモール（LUCHE GROUP） / Giftmallアプリ開発・保守 :+1: </summary>
 
 # 触れた技術スタック
@@ -138,7 +132,6 @@ css: |-
 
 </details>
 
-<!-- <details open><summary>2023年9月 - 2024年5月 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守 :+1: </summary> -->
 <details><summary>2023年9月 - 2024年5月 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守 :+1: </summary>
 
 # 触れた技術スタック
@@ -221,7 +214,6 @@ css: |-
 
 </details>
 
-<!-- <details open><summary>2022年12月 - 2023年8月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary> -->
 <details><summary>2022年12月 - 2023年8月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary>
 
 # 触れた技術スタック
@@ -258,7 +250,6 @@ css: |-
 
 <div class="page-break"></div>
 
-<!-- <details open><summary>2022年01月 - 2022年06月 / BtoC / 新規動画配信サービスアプリ開発 :+1: </summary> -->
 <details><summary>2022年01月 - 2022年06月 / BtoC / 合同会社DMM.com / 動画配信サービスアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
@@ -307,7 +298,6 @@ css: |-
 
 </details>
 
-<!-- <details open><summary>2021年06月 - 2021年12月 / BtoC / 歩数計シリーズアプリ開発 :+1: </summary> -->
 <details><summary>2021年06月 - 2021年12月 / BtoC / メドピア株式会社 / 歩数計シリーズアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
@@ -346,7 +336,6 @@ css: |-
 
 <div class="page-break"></div>
 
-<!-- <details open><summary>2020年10月 - 2021年03月 / BtoBtoC / お薬手帳アプリ開発</summary> -->
 <details><summary>2020年10月 - 2021年03月 / BtoBtoC / 株式会社くすりの窓口 / お薬手帳アプリ開発</summary>
 
 # 概要
@@ -362,7 +351,6 @@ css: |-
 
 <div class="page-break"></div>
 
-<!-- <details open><summary>2020年04月 - 2020年06月 / CtoC / 旅行口コミアプリ開発 :+1: </summary> -->
 <details><summary>2020年04月 - 2020年06月 / CtoC / 株式会社インタースペース / 旅行口コミアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
@@ -398,7 +386,6 @@ css: |-
 
 <div class="page-break"></div>
 
-<!-- <details open><summary>2019年07月 - 2020年03月 / BtoCtoC / 人材系アプリ開発 :+1: </summary> -->
 <details><summary>2019年07月 - 2020年03月 / BtoCtoC / 株式会社リブセンス / 人材系アプリ開発 :+1: </summary>
 
 # 触れた技術スタック
@@ -440,7 +427,6 @@ css: |-
 
 <div class="page-break"></div>
 
-<!-- <details open><summary>2019年04月 - 2019年06月 / BtoB / タクシー乗務員業務用アプリ開発 :+1: </summary> -->
 <details><summary>2019年04月 - 2019年06月 / BtoB / 株式会社Mobility Technologies(旧JapanTaxi株式会社) / タクシー乗務員業務用アプリ開発 :+1: </summary>
 
 # 触れた技術スタック
@@ -479,7 +465,6 @@ css: |-
 
 <div class="page-break"></div>
 
-<!-- <details open><summary>2018年12月 - 2019年03月 / BtoC / 仮想通貨クライアントアプリ開発</summary> -->
 <details><summary>2018年12月 - 2019年03月 / BtoC / 仮想通貨クライアントアプリ開発</summary>
 
 # 概要
@@ -492,7 +477,6 @@ css: |-
 
 </details>
 
-<!-- <details open><summary>2018年04月 - 2018年05月 / BtoB / ローカル仮想通貨アプリ開発</summary> -->
 <details><summary>2018年04月 - 2018年05月 / BtoB / ローカル仮想通貨アプリ開発</summary>
 
 # 概要
@@ -507,7 +491,6 @@ css: |-
 
 <div class="page-break"></div>
 
-<!-- <details open><summary>2017年11月 - 2018年03月 / BtoC / 化学メーカーのHEMSアプリ開発 :+1: </summary> -->
 <details><summary>2017年11月 - 2018年03月 / BtoC / 化学メーカーのHEMSアプリ開発 :+1: </summary>
 
 # 概要
@@ -543,7 +526,6 @@ css: |-
 
 <div class="page-break"></div>
 
-<!-- <details open><summary>2017年06月 - 2017年11月 / BtoC / 空調機・化学製品メーカーの製品用リモコンアプリ開発 :+1: </summary> -->
 <details><summary>2017年06月 - 2017年11月 / BtoC / 空調機・化学製品メーカーの製品用リモコンアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
@@ -582,7 +564,6 @@ css: |-
 
 <div class="page-break"></div>
 
-<!-- <details open><summary>2017年02月 - 2017年05月 / BtoB / 配送事業者のアプリ開発</summary> -->
 <details><summary>2017年02月 - 2017年05月 / BtoB / 配送事業者のアプリ開発</summary>
 
 # 概要
@@ -595,7 +576,6 @@ css: |-
 
 </details>
 
-<!-- <details open><summary>2016年06月 - 2017年01月 / BtoC / ECサイトアプリ開発 :+1: </summary> -->
 <details><summary>2016年06月 - 2017年01月 / BtoC / ECサイトアプリ開発 :+1: </summary>
 
 # 概要
@@ -627,7 +607,6 @@ css: |-
 
 <div class="page-break"></div>
 
-<!-- <details open><summary>2016年03月 - 2016年06月 / BtoC / 適正診断アプリ開発</summary> -->
 <details><summary>2016年03月 - 2016年06月 / BtoC / 株式会社ハコブネ / 適正診断アプリ開発</summary>
 
 # 概要
@@ -641,7 +620,6 @@ css: |-
 
 </details>
 
-<!-- <details open><summary>2016年02月 - 2016年03月 / BtoB / Androidビーコンアプリ開発</summary> -->
 <details><summary>2016年02月 - 2016年03月 / BtoB / 株式会社ハコブネ / Androidビーコンアプリ開発</summary>
 
 # 概要
@@ -653,7 +631,6 @@ css: |-
 
 </details>
 
-<!-- <details open><summary>2016年01月 - 2016年02月 / BtoC / プログラミング教育講師・チューター</summary> -->
 <details><summary>2016年01月 - 2016年02月 / BtoC / 株式会社ハコブネ / プログラミング教育講師・チューター</summary>
 
 # 概要
@@ -663,7 +640,6 @@ css: |-
 
 </details>
 
-<!-- <details open><summary>2015年11月 - 2016年05月 / BtoC / 遺言動画保存アプリ開発</summary> -->
 <details><summary>2015年11月 - 2016年05月 / BtoC / 株式会社ハコブネ / 遺言動画保存アプリ開発</summary>
 
 # 概要
@@ -678,7 +654,6 @@ css: |-
 
 <div class="page-break"></div>
 
-<!-- <details open><summary>2015年02月 - 2015年03月 / BtoB / 新入社員向けプログラミング講義教師</summary> -->
 <details><summary>2015年02月 - 2015年03月 / BtoB / 株式会社ハコブネ / 新入社員向けプログラミング講義教師</summary>
 
 # 概要
@@ -691,7 +666,6 @@ css: |-
 
 <div class="page-break"></div>
 
-<!-- <details open><summary>2015年01月 - 2016年02月 / BtoC / 育成シュミレーションアプリ開発 :+1: </summary> -->
 <details><summary>2015年01月 - 2016年02月 / BtoC / 株式会社ハコブネ / 育成シュミレーションアプリ開発 :+1: </summary>
 
 # 触れた技術スタック
