@@ -15,7 +15,7 @@ css: |-
 
 |      名称      | 経験歴        |
 |:---------------|:-----------|
-| Android Mobile | 6年半(79ヶ月)  |
+| Android Mobile | 7年(85ヶ月)   |
 | Android TV     | 6ヶ月        |
 | iOS            | 7ヶ月        |
 | Flutter        | 2ヶ月        |
@@ -25,7 +25,7 @@ css: |-
 
 |     名称    | 経験歴                          |
 |:------------|:-----------------------------|
-| Kotlin      | 5年半(67ヶ月)                    |
+| Kotlin      | 6年(73ヶ月)                     |
 | Swift       | 7ヶ月                          |
 | Dart        | 2ヶ月                          |
 | C++         | 1.5年(18ヶ月)                   |
@@ -94,6 +94,46 @@ css: |-
 
 > [!TIP]
 > 各プロジェクトをクリックすると詳細が展開されます
+
+<details><summary>2024年10月 - 現在 / BtoC / 株式会社ドワンゴ（KADOKAWAグループ） / Zen Studyアプリ開発・保守 :+1: </summary>
+
+# 触れた技術スタック
+
+- Kotlin, Jetpack Compose, Android, RESTAPI, Kotlin Coroutine, RxJava, Robolectric, firebase, OAuth2.0, OIDC
+
+# 概要
+- ストアは[此方](https://play.google.com/store/apps/details?id=nico.ed.nnn.zane)
+- マルチモジュールだがDIは入っていない
+- PresenterとInjectorと呼ばれるクラスによってDIが行われている
+- [DIは入っていないがRoborazziは入っている](https://qiita.com/hiesiea/items/237524b68d70ea1fecb6)
+- WebViewとNativeの混合構成
+
+# 担当
+
+- [R高](https://nnn.ed.jp/high_school_feature/r_high_school/)が開学するためそちらに対応するためのアプリの改修と技術調査を主に担当
+- 他にもCrashlyticsで挙がってくるバグの調査・対応も担当
+
+# 課題
+
+- ログイン導線が変更になるためそれに対応するために[OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) / [OIDC](https://openid.net/developers/how-connect-works/)に準拠したログインフローを実装する必要がある
+- ただし標準的なOIDCのフローや[PKCE](https://datatracker.ietf.org/doc/html/rfc7636)対応とは異なる実装を求められるため[公式ドキュメント](https://developers.google.com/identity/protocols/oauth2/native-app?hl=ja)で使用が推奨されている[AppAuth](https://github.com/openid/AppAuth-Android)を使用しない独自実装が必要
+- AndroidチームにOAuth2.0 / OIDCに知見の有るメンバーが1人も居ないため自分で調べて実装・懸念点の洗い出しを行う必要がある
+- レビュー前までに他のメンバーにも知識を付けてもらうための勉強会等をレビューまでに定期的に行う必要がある
+  - レビュー時に他のメンバーにもOAuth2.0 / OIDCの知見が無いとレビューが出来ずタスクが進行できないので理解してもらう事は必須
+
+# 取り組み
+
+- 実装フェーズが複数有るのでそれらに取り組みつつOAuth2.0 / OIDCやPKCEについての知識を深める
+- 他のメンバーが策定しているフローにセキュリティリスクが存在しないかの検証
+
+# 工夫した点
+
+- 付け焼き刃的に暗記しても意味が無いので毎日OAuth2.0 / OIDCやPKCEについて調べて実装に備えるようにした
+- DroidKaigiで得た知見の共有
+  - codeInsightSettings.xmlが設定されておらずCompose以外の不要なクラスがサジェストされていたのでサジェストされないようにした
+  - https://github.com/DroidKaigi/conference-app-2023/pull/589
+
+</details>
 
 <details><summary>2024年5月 - 2024年8月 / BtoC / 株式会社ギフトモール（LUCHE GROUP） / Giftmallアプリ開発・保守 :+1: </summary>
 
