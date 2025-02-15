@@ -95,7 +95,7 @@ css: |-
 > [!TIP]
 > 各プロジェクトをクリックすると詳細が展開されます
 
-<details><summary>2024年10月 - 現在 / BtoC / 株式会社ドワンゴ（KADOKAWAグループ） / Zen Studyアプリ開発・保守 :+1: </summary>
+<details><summary>2024年10月 - 2025年03月 / BtoC / 株式会社ドワンゴ（KADOKAWAグループ） / Zen Studyアプリ開発・保守 :+1: </summary>
 
 # 触れた技術スタック
 
