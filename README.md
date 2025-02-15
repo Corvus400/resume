@@ -135,7 +135,7 @@ css: |-
 
 </details>
 
-<details><summary>2024年5月 - 2024年8月 / BtoC / 株式会社ギフトモール（LUCHE GROUP） / Giftmallアプリ開発・保守 :+1: </summary>
+<details><summary>2024年05月 - 2024年08月 / BtoC / 株式会社ギフトモール（LUCHE GROUP） / Giftmallアプリ開発・保守 :+1: </summary>
 
 # 触れた技術スタック
 
@@ -172,7 +172,7 @@ css: |-
 
 </details>
 
-<details><summary>2023年9月 - 2024年5月 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守 :+1: </summary>
+<details><summary>2023年09月 - 2024年05月 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守 :+1: </summary>
 
 # 触れた技術スタック
 
@@ -254,7 +254,7 @@ css: |-
 
 </details>
 
-<details><summary>2022年12月 - 2023年8月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary>
+<details><summary>2022年12月 - 2023年08月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary>
 
 # 触れた技術スタック
 
