@@ -15,7 +15,7 @@ css: |-
 
 |      名称      | 経験歴        |
 |:---------------|:-----------|
-| Android Mobile | 7年(85ヶ月)   |
+| Android Mobile | 7年弱(88ヶ月)  |
 | Android TV     | 6ヶ月        |
 | iOS            | 7ヶ月        |
 | Flutter        | 2ヶ月        |
@@ -25,7 +25,7 @@ css: |-
 
 |     名称    | 経験歴                          |
 |:------------|:-----------------------------|
-| Kotlin      | 6年(73ヶ月)                     |
+| Kotlin      | 6年弱(76ヶ月)                    |
 | Swift       | 7ヶ月                          |
 | Dart        | 2ヶ月                          |
 | C++         | 1.5年(18ヶ月)                   |
@@ -94,6 +94,54 @@ css: |-
 
 > [!TIP]
 > 各プロジェクトをクリックすると詳細が展開されます
+
+<details><summary>2025年04月 - 2025年06月 / BtoC & BtoB / newmo株式会社 / newmoタクシー車載タブレットアプリ&乗客用スマートフォンアプリ開発・保守 :+1: </summary>
+
+# 触れた技術スタック
+
+- Kotlin, Jetpack Compose, Android, GraphQL(Federation), Kotlin Coroutine, Figma, GoogleMapsAPI, Datadog, Devin, Linear, Slack
+
+# 概要
+
+- 乗客が使用するアプリのストアは[此方](https://apps.apple.com/us/app/newmo-%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%A2-%E3%82%BF%E3%82%AF%E3%82%B7%E3%83%BC-%E3%83%A9%E3%82%A4%E3%83%89%E3%82%B7%E3%82%A7%E3%82%A2%E3%82%A2%E3%83%97%E3%83%AA/id6738711799?mt=8)
+- タクシーの乗務員が使用するタブレットのアプリはストアを使用して公開していない。
+- モノリポジトリのため、Android/iOS/Web/BE全てが単一のリポジトリにて開発されている。
+- 通信はGraphQLに統一されている。
+  - BFFパターンではなく[Federationパターン](https://graphql.org/learn/federation/)が採用されている。
+  - そのため、サブグラフとスーパーグラフが存在する。
+- 乗客・乗務員両方のアプリはGoogleMap部分などComposeに対応していない部分以外はComposeで画面が構成されている。
+
+# 担当
+
+- 乗客用アプリ・乗務員用アプリ両方の機能追加・保守を担当。
+- チーム人数は10人以上(担当が固定されていないので、人数は変動)
+- リリースは一週間ごとに行われ、当番制で行うため自分も担当。
+- 後半は乗務員用アプリの施策対応がメイン。
+
+# 課題
+
+- 乗客用アプリはiOS側より開発が遅れていたので、iOSのリリース完了後にAndroidを普段開発していない人もオンボーディングを受けた上でコードを書いている。
+  - そのため、Androidの経験の浅いメンバーによって書かれた部分の書き方が推奨の構成と異なる状態となっている。
+  - ローディング表示なども入っていないため、ロード中に「さん」など固定文字だけが一瞬見えるような状態となっている。
+- リリースプロセスの資料があるものの、暗黙知になっている部分が多く、資料を見るだけでは完結しない状態となっている。
+  - そのためか、特定の同じ人がずっとリリース作業を担当しており、その人が休めない状態となっていた。
+- 乗務員用アプリの施策対応によって、一部効果音を端末の音量設定を0に設定していても必ず鳴るようにした。
+  - 音が鳴って欲しくない場面(オフィスでの開発時やQA時)でも音が鳴るようになってしまった。
+
+# 取り組み
+
+- 乗務員用アプリはAndroidの経験が豊富なメンバーによって記述されているため、そちらで使用されている[UiStateBuilder](https://github.com/DroidKaigi/conference-app-2023/blob/f255ed2f6f07f9f6f83bc3b15384b9bcf001d8e8/core/ui/src/commonMain/kotlin/io/github/droidkaigi/confsched2023/ui/UiStateBuilder.kt)を用いてリファクタを行った。
+- リファクタと同時に[ShimmerEffect](https://github.com/valentinilk/compose-shimmer)を導入することで、ローディング表示を導入し固定文字がチラつく状態を解消した。
+- 乗務員用アプリ・乗客用アプリのリリースプロセスの資料を実際にリリース作業を行なって出た不明点をもとに書き直し、リリース作業をしたことが無い人でも資料を見れば必要な手順が分かるようにすることで、単一障害点とならないようにした。
+- SlackのWorkflow Builderを使用してリリース作業に役立つワークフローを追加した。
+- デバッグ設定を利用して、効果音が端末の設定音量に応じて鳴る機能を追加した。
+  - [DroidKaigi2024](https://github.com/DroidKaigi/conference-app-2024/pull/880)にてCompositionLocalProviderを使用していたので、この機能もCompositionLocalProviderを使用してUiStateを介さずに実現した。
+
+# 工夫した点
+
+- DroidKaigiの知見を活用した。
+
+</details>
 
 <details><summary>2024年10月 - 2025年03月 / BtoC / 株式会社ドワンゴ（KADOKAWAグループ） / Zen Studyアプリ開発・保守 :+1: </summary>
 
