@@ -99,7 +99,7 @@ css: |-
 
 # 触れた技術スタック
 
-- Kotlin, Jetpack Compose, Android, GraphQL(Federation), Kotlin Coroutine, Figma, GoogleMapsAPI, Datadog, Devin, Linear, Slack
+- Kotlin, Jetpack Compose, Android, GraphQL(Federation), Kotlin Coroutine, Figma, GoogleMapsAPI, Datadog, Devin, Linear, Slack, MagicPod
 
 # 概要
 
@@ -116,7 +116,7 @@ css: |-
 - 乗客用アプリ・乗務員用アプリ両方の機能追加・保守を担当。
 - チーム人数は10人以上(担当が固定されていないので、人数は変動)
 - リリースは一週間ごとに行われ、当番制で行うため自分も担当。
-- 後半は乗務員用アプリの施策対応がメイン。
+- 後半は乗務員用アプリの施策対応やMagicPodを使ったテストケースの追加がメイン。
 
 # 課題
 
@@ -127,6 +127,7 @@ css: |-
   - そのためか、特定の同じ人がずっとリリース作業を担当しており、その人が休めない状態となっていた。
 - 乗務員用アプリの施策対応によって、一部効果音を端末の音量設定を0に設定していても必ず鳴るようにした。
   - 音が鳴って欲しくない場面(オフィスでの開発時やQA時)でも音が鳴るようになってしまった。
+- プロダクトの方針が大きく変わったことで、乗客用アプリの優先度が下がったたためアプリのQAコストを削減し、乗務員用アプリへリソースを再配分する必要がある。
 
 # 取り組み
 
@@ -136,6 +137,7 @@ css: |-
 - SlackのWorkflow Builderを使用してリリース作業に役立つワークフローを追加した。
 - デバッグ設定を利用して、効果音が端末の設定音量に応じて鳴る機能を追加した。
   - [DroidKaigi2024](https://github.com/DroidKaigi/conference-app-2024/pull/880)にてCompositionLocalProviderを使用していたので、この機能もCompositionLocalProviderを使用してUiStateを介さずに実現した。
+- MagicPodを用いてリグレッションテストの自動化に着手した。
 
 # 工夫した点
 
