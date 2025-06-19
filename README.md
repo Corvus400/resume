@@ -41,7 +41,7 @@ css: |-
 
 ## 業務外活動
 
-<details><summary>DroidKaigi2024コントリビュート :+1: </summary>
+<details><summary>DroidKaigi2024コントリビュート</summary>
 
 - 8/11のリポジトリ公開から9/10までの31日間コントリビュートしました
 - 結果と貢献を通じて何を学んだかはZennに纏めておりますのでそちらをご覧ください
@@ -51,7 +51,7 @@ css: |-
 
 </details>
 
-<details><summary>DroidKaigi2023コントリビュート :+1: </summary>
+<details><summary>DroidKaigi2023コントリビュート</summary>
 
 - 8/14のリポジトリ公開から9/13までの30日間コントリビュートしました
 - 結果と貢献を通じて何を学んだかは[Zenn](https://zenn.dev/todayama_r/articles/404e358eaac1f1)に纏めておりますのでそちらをご覧ください
@@ -60,7 +60,7 @@ css: |-
 
 </details>
 
-<details><summary>DroidKaigi2022コントリビュート :+1: </summary>
+<details><summary>DroidKaigi2022コントリビュート</summary>
 
 - 9/6のリポジトリ公開から10/2までの26日間で[大小様々なPRを38個](https://github.com/DroidKaigi/conference-app-2022/pulls?q=is%3Apr+author%3ACorvus400+)作成
   - その内2個にリポジトリオーナーの[takahirom](https://github.com/takahirom)さんより[awesomeタグ](https://github.com/DroidKaigi/conference-app-2022/pulls?q=is%3Apr+author%3ACorvus400+is%3Aclosed+label%3Aawesome)を頂きました
@@ -93,9 +93,10 @@ css: |-
 ## 携わったプロジェクト
 
 > [!TIP]
-> 各プロジェクトをクリックすると詳細が展開されます
+> 各プロジェクトをクリックすると詳細が展開されます。<br>
+> :identification_card: が付いている経歴は正社員としての所属で、それ以外は業務委託としての職歴になります。
 
-<details><summary>2025年04月 - 2025年06月 / BtoC & BtoB / newmo株式会社 / newmoタクシー車載タブレットアプリ&乗客用スマートフォンアプリ開発・保守 :+1: </summary>
+<details><summary>2025年04月 - 2025年06月 / BtoC & BtoB / newmo株式会社 / newmoタクシー車載タブレットアプリ&乗客用スマートフォンアプリ開発・保守</summary>
 
 # 触れた技術スタック
 
@@ -145,7 +146,7 @@ css: |-
 
 </details>
 
-<details><summary>2024年10月 - 2025年03月 / BtoC / 株式会社ドワンゴ（KADOKAWAグループ） / Zen Studyアプリ開発・保守 :+1: </summary>
+<details><summary>2024年10月 - 2025年03月 / BtoC / 株式会社ドワンゴ（KADOKAWAグループ） / Zen Studyアプリ開発・保守</summary>
 
 # 触れた技術スタック
 
@@ -185,7 +186,7 @@ css: |-
 
 </details>
 
-<details><summary>2024年05月 - 2024年08月 / BtoC / 株式会社ギフトモール（LUCHE GROUP） / Giftmallアプリ開発・保守 :+1: </summary>
+<details><summary>2024年05月 - 2024年08月 / BtoC / 株式会社ギフトモール（LUCHE GROUP） / Giftmallアプリ開発・保守</summary>
 
 # 触れた技術スタック
 
@@ -222,7 +223,7 @@ css: |-
 
 </details>
 
-<details><summary>2023年09月 - 2024年05月 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守 :+1: </summary>
+<details><summary>2023年09月 - 2024年05月 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守</summary>
 
 # 触れた技術スタック
 
@@ -304,7 +305,7 @@ css: |-
 
 </details>
 
-<details><summary>2022年12月 - 2023年08月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :+1: </summary>
+<details><summary>2022年12月 - 2023年08月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :identification_card: </summary>
 
 # 触れた技術スタック
 
@@ -340,7 +341,7 @@ css: |-
 
 <div class="page-break"></div>
 
-<details><summary>2022年01月 - 2022年06月 / BtoC / 合同会社DMM.com / 動画配信サービスアプリ開発 :+1: </summary>
+<details><summary>2022年01月 - 2022年06月 / BtoC / 合同会社DMM.com / 動画配信サービスアプリ開発</summary>
 
 # 触れた技術スタック
 
@@ -388,7 +389,7 @@ css: |-
 
 </details>
 
-<details><summary>2021年06月 - 2021年12月 / BtoC / メドピア株式会社 / 歩数計シリーズアプリ開発 :+1: </summary>
+<details><summary>2021年06月 - 2021年12月 / BtoC / メドピア株式会社 / 歩数計シリーズアプリ開発</summary>
 
 # 触れた技術スタック
 
@@ -441,7 +442,7 @@ css: |-
 
 <div class="page-break"></div>
 
-<details><summary>2020年04月 - 2020年06月 / CtoC / 株式会社インタースペース / 旅行口コミアプリ開発 :+1: </summary>
+<details><summary>2020年04月 - 2020年06月 / CtoC / 株式会社インタースペース / 旅行口コミアプリ開発</summary>
 
 # 触れた技術スタック
 
@@ -476,7 +477,7 @@ css: |-
 
 <div class="page-break"></div>
 
-<details><summary>2019年07月 - 2020年03月 / BtoCtoC / 株式会社リブセンス / 人材系アプリ開発 :+1: </summary>
+<details><summary>2019年07月 - 2020年03月 / BtoCtoC / 株式会社リブセンス / 人材系アプリ開発</summary>
 
 # 触れた技術スタック
 
@@ -517,7 +518,7 @@ css: |-
 
 <div class="page-break"></div>
 
-<details><summary>2019年04月 - 2019年06月 / BtoB / 株式会社Mobility Technologies(旧JapanTaxi株式会社) / タクシー乗務員業務用アプリ開発 :+1: </summary>
+<details><summary>2019年04月 - 2019年06月 / BtoB / 株式会社Mobility Technologies(旧JapanTaxi株式会社) / タクシー乗務員業務用アプリ開発</summary>
 
 # 触れた技術スタック
 
@@ -581,7 +582,7 @@ css: |-
 
 <div class="page-break"></div>
 
-<details><summary>2017年11月 - 2018年03月 / BtoC / 化学メーカーのHEMSアプリ開発 :+1: </summary>
+<details><summary>2017年11月 - 2018年03月 / BtoC / 化学メーカーのHEMSアプリ開発</summary>
 
 # 概要
 - Home Energy Management Systemアプリ開発
@@ -616,7 +617,7 @@ css: |-
 
 <div class="page-break"></div>
 
-<details><summary>2017年06月 - 2017年11月 / BtoC / 空調機・化学製品メーカーの製品用リモコンアプリ開発 :+1: </summary>
+<details><summary>2017年06月 - 2017年11月 / BtoC / 空調機・化学製品メーカーの製品用リモコンアプリ開発</summary>
 
 # 触れた技術スタック
 
@@ -666,7 +667,7 @@ css: |-
 
 </details>
 
-<details><summary>2016年06月 - 2017年01月 / BtoC / ECサイトアプリ開発 :+1: </summary>
+<details><summary>2016年06月 - 2017年01月 / BtoC / ECサイトアプリ開発</summary>
 
 # 概要
 - 大手コンビニ事業者が、複数アプリで提供していたサービスを統合する事を目的とするアプリの開発
@@ -697,7 +698,7 @@ css: |-
 
 <div class="page-break"></div>
 
-<details><summary>2016年03月 - 2016年06月 / BtoC / 株式会社ハコブネ / 適正診断アプリ開発</summary>
+<details><summary>2016年03月 - 2016年06月 / BtoC / 株式会社ハコブネ / 適正診断アプリ開発 :identification_card: </summary>
 
 # 概要
 
@@ -710,7 +711,7 @@ css: |-
 
 </details>
 
-<details><summary>2016年02月 - 2016年03月 / BtoB / 株式会社ハコブネ / Androidビーコンアプリ開発</summary>
+<details><summary>2016年02月 - 2016年03月 / BtoB / 株式会社ハコブネ / Androidビーコンアプリ開発 :identification_card: </summary>
 
 # 概要
 
@@ -721,7 +722,7 @@ css: |-
 
 </details>
 
-<details><summary>2016年01月 - 2016年02月 / BtoC / 株式会社ハコブネ / プログラミング教育講師・チューター</summary>
+<details><summary>2016年01月 - 2016年02月 / BtoC / 株式会社ハコブネ / プログラミング教育講師・チューター :identification_card: </summary>
 
 # 概要
 
@@ -730,7 +731,7 @@ css: |-
 
 </details>
 
-<details><summary>2015年11月 - 2016年05月 / BtoC / 株式会社ハコブネ / 遺言動画保存アプリ開発</summary>
+<details><summary>2015年11月 - 2016年05月 / BtoC / 株式会社ハコブネ / 遺言動画保存アプリ開発 :identification_card: </summary>
 
 # 概要
 
@@ -744,7 +745,7 @@ css: |-
 
 <div class="page-break"></div>
 
-<details><summary>2015年02月 - 2015年03月 / BtoB / 株式会社ハコブネ / 新入社員向けプログラミング講義教師</summary>
+<details><summary>2015年02月 - 2015年03月 / BtoB / 株式会社ハコブネ / 新入社員向けプログラミング講義教師 :identification_card: </summary>
 
 # 概要
 
@@ -756,7 +757,7 @@ css: |-
 
 <div class="page-break"></div>
 
-<details><summary>2015年01月 - 2016年02月 / BtoC / 株式会社ハコブネ / 育成シュミレーションアプリ開発 :+1: </summary>
+<details><summary>2015年01月 - 2016年02月 / BtoC / 株式会社ハコブネ / 育成シュミレーションアプリ開発 :identification_card: </summary>
 
 # 触れた技術スタック
 
