@@ -94,7 +94,8 @@ css: |-
 
 > [!TIP]
 > 各プロジェクトをクリックすると詳細が展開されます。<br>
-> :identification_card: が付いている経歴は正社員としての所属で、それ以外は業務委託としての職歴になります。
+> :identification_card: が付いている経歴は正社員としての所属で、それ以外は業務委託としての職歴になります。<br>
+> 社名の無い部分に関しては、所属企業でのSESでの職歴になります。
 
 <details><summary>2025年04月 - 2025年06月 / BtoC & BtoB / newmo株式会社 / newmoタクシー車載タブレットアプリ&乗客用スマートフォンアプリ開発・保守</summary>
 
@@ -568,7 +569,7 @@ css: |-
 
 </details>
 
-<details><summary>2018年04月 - 2018年05月 / BtoB / ローカル仮想通貨アプリ開発</summary>
+<details><summary>2018年04月 - 2018年05月 / BtoB / ローカル仮想通貨アプリ開発 :identification_card: </summary>
 
 # 概要
 
@@ -582,7 +583,7 @@ css: |-
 
 <div class="page-break"></div>
 
-<details><summary>2017年11月 - 2018年03月 / BtoC / 化学メーカーのHEMSアプリ開発</summary>
+<details><summary>2017年11月 - 2018年03月 / BtoC / 化学メーカーのHEMSアプリ開発 :identification_card: </summary>
 
 # 概要
 - Home Energy Management Systemアプリ開発
@@ -617,7 +618,7 @@ css: |-
 
 <div class="page-break"></div>
 
-<details><summary>2017年06月 - 2017年11月 / BtoC / 空調機・化学製品メーカーの製品用リモコンアプリ開発</summary>
+<details><summary>2017年06月 - 2017年11月 / BtoC / 空調機・化学製品メーカーの製品用リモコンアプリ開発 :identification_card: </summary>
 
 # 触れた技術スタック
 
@@ -655,7 +656,7 @@ css: |-
 
 <div class="page-break"></div>
 
-<details><summary>2017年02月 - 2017年05月 / BtoB / 配送事業者のアプリ開発</summary>
+<details><summary>2017年02月 - 2017年05月 / BtoB / 配送事業者のアプリ開発 :identification_card: </summary>
 
 # 概要
 
@@ -667,7 +668,7 @@ css: |-
 
 </details>
 
-<details><summary>2016年06月 - 2017年01月 / BtoC / ECサイトアプリ開発</summary>
+<details><summary>2016年06月 - 2017年01月 / BtoC / ECサイトアプリ開発 :identification_card: </summary>
 
 # 概要
 - 大手コンビニ事業者が、複数アプリで提供していたサービスを統合する事を目的とするアプリの開発
