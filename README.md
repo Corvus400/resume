@@ -15,7 +15,7 @@ css: |-
 
 |      名称      | 経験歴        |
 |:---------------|:-----------|
-| Android Mobile | 7年弱(88ヶ月)  |
+| Android Mobile | 7年弱(89ヶ月)  |
 | Android TV     | 6ヶ月        |
 | iOS            | 7ヶ月        |
 | Flutter        | 2ヶ月        |
@@ -25,7 +25,7 @@ css: |-
 
 |     名称    | 経験歴                          |
 |:------------|:-----------------------------|
-| Kotlin      | 6年弱(76ヶ月)                    |
+| Kotlin      | 6年半(77ヶ月)                    |
 | Swift       | 7ヶ月                          |
 | Dart        | 2ヶ月                          |
 | C++         | 1.5年(18ヶ月)                   |
@@ -40,6 +40,14 @@ css: |-
 <div class="page-break"></div>
 
 ## 業務外活動
+
+<details><summary>DroidKaigi2025コントリビュート</summary>
+
+- 8/17のリポジトリ公開から9/10までの24日間コントリビュートしました
+- 結果と貢献を通じて何を学んだかはZennに纏めておりますのでそちらをご覧ください
+  - [DroidKaigi2025のカンファレンスアプリを改善するIssueを106件作成しました(約一ヶ月間継続貢献)](https://zenn.dev/todayama_r/articles/6a4f24033ba7be)
+
+</details>
 
 <details><summary>DroidKaigi2024コントリビュート</summary>
 
