@@ -105,6 +105,85 @@ css: |-
 > :identification_card: が付いている経歴は正社員としての所属で、それ以外は業務委託としての職歴になります。<br>
 > 社名の無い部分に関しては、所属企業でのSESでの職歴になります。
 
+<details><summary>2025年09月 - 2026年03月 / BtoC / オイシックス・ラ・大地株式会社 / Oisix ECアプリ開発</summary>
+
+# 触れた技術スタック
+
+- Kotlin, Kotlin Coroutines, Kotlin Flow, Jetpack Compose, Android, KMP (Kotlin Multiplatform), Swift (iOS連携), Claude Code, Devin, GitHub Actions, Roborazzi (Screenshot Testing), ADR (Architecture Decision Records)
+
+# 概要
+
+- 会員数360万人超のEC定期便サービス「Oisix」のAndroid/iOSアプリ開発に従事
+- Android版ストアは[此方](https://play.google.com/store/apps/details?id=com.oisix.android.app)
+- 30以上のマルチモジュール構成で、KMP (Kotlin Multiplatform) によるiOSとのコード共有を推進中
+- アーキテクチャはClean Architecture + DDDに基づき、UseCase層を中心としたドメインロジックの設計
+
+# 担当
+
+- Androidアプリの機能開発・保守、および技術基盤改善を担当
+- チーム人数は約10名（Android専任）、iOSチームとの連携あり
+
+# 課題
+
+- Claude等AI導入によって実装までは早くなったものの、レビューが最大のボトルネックになっている
+- クリティカル導線テストを実施する際に曜日に依存する仕様やテストの前提条件となるアカウントの用意が困難な箇所があり、テストの実施が困難となっている。
+- KMPによって提供しているUseCaseが十分に検証されておらず、iOS側で使用された際にクラッシュする問題を引き起こすなど種々の問題を引き起こしていた
+- レガシーな「HostService」パターンがテスタビリティとKMP移行の障壁となっていた
+  - RxJavaベースの実装が多く、Coroutine移行が進んでいない
+  - iOS側との共通化を阻む設計上の問題
+- アーキテクチャ決定の経緯が暗黙知化しており、新規メンバーのキャッチアップに時間がかかる
+
+# 取り組み
+
+## PRのレビューを半自動化する大規模なClaudeスキルの作成
+
+- ベースブランチと対象ブランチとの差分をClaudeが検出し、テストプランを組み立てadbコマンドなどを使用してClaudeが自律的に動作確認を行う
+- 一時的なログコードの挿入、スクリーンショット、画面の録画を行うことでエビデンスを収集し動作確認後に該当PRにレポートを投稿する
+- Claudeの推論に任せる箇所と、シェルによって冪等性を担保する箇所とを分け、スキル発動のたびに冪等性が担保されず結果や出力形式がバラバラになる問題を解決
+- テスト可能な箇所とテスト不能な箇所とをClaude自身がシェルを使用して判別可能となっており、テストが実施できない場合は改善Issueを投稿する機能も用意しスケール可能としている
+- 現状はADB (Android Debug Bridge)コマンド等に依存しているためAndroid専用だが、idb(iOS Development Bridge)やsimctlなどのコマンドを使用することでiOS版も作成可能
+
+## Ktorを用いたMockServerの構築
+
+- ClaudeなどのAIエージェントが使用することを前提としたシナリオ・Fixture切り替えをコマンドによって実行可能なMockServerを構築した
+- このMockServerを使用することで曜日・時間に関係なく任意のシナリオや条件でテストを実行できるようになり、曜日依存や一部前提を整えることが難しいテストを容易に実行可能としテスト効率が向上
+- Claudeを使用することで高速に要件定義から実装・動作確認までを完遂
+
+## KMP対応の基盤整備
+
+- @ObjCName, @Throws アノテーションの付与漏れ並びにfun interface以外の実装違反を検出するスクリプトを作成した
+- ObjCNameアノテーションを必須とすることでiOS側との連携時の名前マングリング問題を防止した
+- Throwsアノテーションを必須とすることでiOS側でExceptionをキャッチできずにクラッシュする箇所が混入する問題を防止した
+- 単一責任原則をコードで強制しファイルによって記述がバラバラとなり種々の問題を引き起こす可能性を防止
+
+## copilot-instructions.md の整備
+
+- GitHub Copilotへの指示を整理・追加し、PRレビュー時のサジェスト品質を改善した
+- copilot-instrucstions.mdのベストプラクティクスに沿って内容が自動で修正されるClaudeのスキルを作成した
+
+## 開発補助ツールの作成
+
+- Claude A/B連携スキル: 要約・指示担当と重い処理担当を分離するワークフローを構築した
+
+## HostService → UseCase移行
+
+- 複数モジュール（box, login, category, shoppingcart, orderhistory, notification, jack）のHostServiceをUseCase層へ置き換えた
+
+## ADR策定と命名規則の統一
+
+- UseCaseの命名規則ADRを策定し、17件のUseCaseをADR準拠にリネームした
+- XXXServiceListener → OnXxxLoadedListener への命名統一を実施した
+- interface を fun interface に統一する方針をADRとして明文化した
+
+# 工夫した点
+
+- Claudeの活用によって得られた知見をSkill等の形にしてチームへ即座に還元
+- 追加より削除を重視し、技術的負債の返済を意識した
+- ADRで設計判断を明文化し、暗黙知の形式知化を進めた
+- 将来の保守者が「なぜその設計か」を追えるようにした
+
+</details>
+
 <details><summary>2025年04月 - 2025年06月 / BtoC & BtoB / newmo株式会社 / newmoタクシー車載タブレットアプリ&乗客用スマートフォンアプリ開発・保守</summary>
 
 # 触れた技術スタック
