@@ -83,7 +83,7 @@ css: |-
 - [Issueも16個消化し内5個がhigh priorityのもの](https://github.com/DroidKaigi/conference-app-2022/issues?q=is%3Aissue+assignee%3ACorvus400)でした
 - [DroidKaigi2022 Day1 の Welcome Talk　にてオーガナイザーの方々と並ぶ形でご紹介頂きました](https://www.youtube.com/watch?v=P8BZw_yCokc&t=5327s)
 
-![Insights](images/Insights.png)
+<img width="917" height="570" alt="Image" src="https://github.com/user-attachments/assets/da13d1c8-2ee1-480a-a77c-182c758ce32d" />
 
 </details>
 
