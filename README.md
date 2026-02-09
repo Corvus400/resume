@@ -192,6 +192,8 @@ css: |-
 
 </details>
 
+<div class="page-break"></div>
+
 <details><summary>2025年04月 - 2025年06月 / BtoC & BtoB / newmo株式会社 / newmoタクシー車載タブレットアプリ&乗客用スマートフォンアプリ開発・保守</summary>
 
 # 触れた技術スタック
@@ -242,6 +244,8 @@ css: |-
 
 </details>
 
+<div class="page-break"></div>
+
 <details><summary>2024年10月 - 2025年03月 / BtoC / 株式会社ドワンゴ（KADOKAWAグループ） / Zen Studyアプリ開発・保守</summary>
 
 # 触れた技術スタック
@@ -282,6 +286,8 @@ css: |-
 
 </details>
 
+<div class="page-break"></div>
+
 <details><summary>2024年05月 - 2024年08月 / BtoC / 株式会社ギフトモール（LUCHE GROUP） / Giftmallアプリ開発・保守</summary>
 
 # 触れた技術スタック
@@ -318,6 +324,8 @@ css: |-
   - [参考にしたPR](https://github.com/DroidKaigi/conference-app-2023/pull/1126)
 
 </details>
+
+<div class="page-break"></div>
 
 <details><summary>2023年09月 - 2024年05月 / BtoB / 株式会社TOKIUM / TOKIUM経費精算システムアプリ開発・保守</summary>
 
@@ -400,6 +408,8 @@ css: |-
 - DroidKaigi2023での貢献を通して得た知見を活用した
 
 </details>
+
+<div class="page-break"></div>
 
 <details><summary>2022年12月 - 2023年08月 / BtoC / REALITY株式会社(グリーグループ) / REALITYのAndroidアプリ開発・保守 :identification_card: </summary>
 
