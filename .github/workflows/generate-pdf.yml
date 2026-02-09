@@ -1,0 +1,64 @@
+name: Generate PDF from README
+
+on:
+  push:
+    branches: [master]
+    paths: ['README.md']
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Japanese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install md-to-pdf
+        run: npm install md-to-pdf
+
+      - name: Transform README for PDF generation
+        run: |
+          cp README.md README_pdf.md
+          sed -i '1s/^<!-- ---/---/' README_pdf.md
+          sed -i 's/^--- -->$/---/' README_pdf.md
+          sed -i 's/<details>/<details open>/g' README_pdf.md
+
+      - name: Verify transformation
+        run: |
+          echo "=== Frontmatter check ==="
+          head -9 README_pdf.md
+          echo ""
+          echo "=== details tag count ==="
+          CLOSED=$(grep -c '<details>' README_pdf.md || echo 0)
+          OPEN=$(grep -c '<details open>' README_pdf.md || echo 0)
+          echo "  <details> (should be 0): $CLOSED"
+          echo "  <details open>: $OPEN"
+
+      - name: Generate PDF
+        run: |
+          OPTS='{ "args": ["--no-sandbox"] }'
+          npx md-to-pdf README_pdf.md \
+            --launch-options "$OPTS"
+
+      - name: Rename and cleanup
+        run: |
+          mv README_pdf.pdf 職務経歴書.pdf
+          rm README_pdf.md
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: 職務経歴書
+          path: 職務経歴書.pdf
+          retention-days: 90
