@@ -122,7 +122,7 @@ css: |-
 # 概要
 
 - 会員数360万人超のEC定期便サービス「Oisix」のAndroid/iOSアプリ開発に従事
-- Android版ストアは[此方](https://play.google.com/store/apps/details?id=com.oisix.android.app)
+- Android版ストアは[此方](https://play.google.com/store/apps/details?id=com.oisix.oisixAndroid&hl=ja)
 - 30以上のマルチモジュール構成で、KMP (Kotlin Multiplatform) によるiOSとのコード共有を推進中
 - アーキテクチャはClean Architecture + DDDに基づき、UseCase層を中心としたドメインロジックの設計
 
