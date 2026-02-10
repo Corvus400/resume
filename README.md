@@ -136,6 +136,9 @@ css: |-
 - Claude等AI導入によって実装までは早くなったものの、レビューが最大のボトルネックになっている
 - クリティカル導線テストを実施する際に曜日に依存する仕様やテストの前提条件となるアカウントの用意が困難な箇所があり、テストの実施が困難となっている。
 - KMPによって提供しているUseCaseが十分に検証されておらず、iOS側で使用された際にクラッシュする問題を引き起こすなど種々の問題を引き起こしていた
+- [GitHub Copilotコードレビュー](https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review)が導入されているが、copilot-instructions.mdの内容が適切ではないため、ハルシネーション頻度が高く、レビュイー・レビュワー双方が対応しなければならない指摘まで無視してしまう頻度が増えていた
+- [oss-licenses-plugin](https://github.com/google/play-services-plugins/tree/main/oss-licenses-plugin)が使用されているが、EdgeToEdgeに対応できず、アップデートされる度に無視できない頻度でライセンス情報が表示出来なくなるなど品質に問題を抱えており、対応される速度が非常に遅い
+- [SwiftExport](https://kotlinlang.org/docs/native-swift-export.html)の導入を検討しているが、誰も手が空いておらず導入検討を行うことができていない
 - レガシーな「HostService」パターンがテスタビリティとKMP移行の障壁となっていた
   - RxJavaベースの実装が多く、Coroutine移行が進んでいない
   - iOS側との共通化を阻む設計上の問題
@@ -159,23 +162,35 @@ css: |-
 
 ## KMP対応の基盤整備
 
-- @ObjCName, @Throws アノテーションの付与漏れ並びにfun interface以外の実装違反を検出するシェルを作成し、GitHubActionsでPR作成時に毎回チェックするようにした
+- [@ObjCName](https://kotlinlang.org/docs/native-objc-interop.html#change-declaration-names), [@Throws アノテーションの付与漏れ](https://github.com/DroidKaigi/conference-app-2024/issues/954)並びにfun interface以外の実装違反を検出するシェルを作成し、GitHubActionsでPR作成時に毎回チェックするようにした
 - ObjCNameアノテーションを必須とすることでiOS側との連携時の名前マングリング問題を防止した
 - Throwsアノテーションを必須とすることでiOS側でExceptionをキャッチできずにクラッシュする箇所が混入する問題を防止した
 - 単一責任原則をコードで強制しファイルによって記述がバラバラとなり種々の問題を引き起こす可能性を防止
 
 ## copilot-instructions.md の整備
 
-- GitHub Copilotへの指示を整理・追加し、PRレビュー時のサジェスト品質を改善した
-- copilot-instrucstions.mdのベストプラクティクスに沿って内容が自動で修正されるClaudeのスキルを作成した
+- [copilot-instrucstions.mdのベストプラクティクス](https://github.blog/ai-and-ml/unlocking-the-full-power-of-copilot-code-review-master-your-instructions-files/)に沿って内容が自動で修正されるClaudeのスキルを作成した
+- 上記のSkillを使用しGitHub Copilotへの指示を整理・追加し、PRレビュー時のサジェスト品質を改善した
+- Copilotを使用しての修正とせずClaude Codeのスキルとしたのは、コンテキストスイッチの防止観点とCopilotで実際に修正を行った上でのUX検討より
+
+## oss-licenses-plugin -> AboutLibraries移行
+
+- [AboutLibraries](https://github.com/mikepenz/AboutLibraries)へ移行することでoss-licenses-pluginが抱えている問題を解決
+  - AboutLibrariesはDroidKaigiでも使用されており実績があり、EdgeToEdge対応もスムーズに行えることから選定
+
+## SwiftExportの導入検討検証
+
+- 技術調査からプロダクトへの導入可否の判定までを実施。
+  - 現段階ではalpha版であり、suspend関数がサポートされていないなど基本的な機能が揃っていないことから導入は見送るという結論をレポートしチームへ貢献
 
 ## 開発補助ツールの作成
 
-- Claude A/B連携スキル: 要約・指示担当と重い処理担当を分離するワークフローを構築した
+- Claude A/B連携スキル: [claude -p オプション](https://code.claude.com/docs/ja/cli-reference)を使用し、要約・指示担当と重い処理担当を分離するワークフローを構築した
 
-## HostService → UseCase移行
+## HostService → UseCase移行, RxJava -> Coroutine移行
 
-- 複数モジュール（box, login, category, shoppingcart, orderhistory, notification, jack）のHostServiceをUseCase層へ置き換えた
+- 複数モジュールのHostServiceをUseCase層へ置き換えた
+- 同様にRxJavaからCoroutineへ[段階的に移行](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-rx2/)した
 
 ## ADR策定と命名規則の統一
 
@@ -187,6 +202,7 @@ css: |-
 
 - Claudeの活用によって得られた知見をSkill等の形にしてチームへ即座に還元
 - 追加より削除を重視し、技術的負債の返済を意識した
+- ルールではなく、CI/CDやCopilotレビューなどの仕組みを組み合わせ同じミスをチーム全員が繰り返さないようにする
 - ADRで設計判断を明文化し、暗黙知の形式知化を進めた
 - 将来の保守者が「なぜその設計か」を追えるようにした
 
