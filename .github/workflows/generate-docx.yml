@@ -1,0 +1,73 @@
+name: Generate DOCX from README
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-docx:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Japanese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+
+      - name: Install Pandoc
+        run: sudo apt-get install -y pandoc
+
+      - name: Create Lua filter for page breaks
+        run: |
+          cat > pagebreak.lua << 'LUAEOF'
+          function RawBlock(el)
+            if el.format == "html" then
+              if el.text:match('class="page%-break"') then
+                return pandoc.RawBlock("openxml",
+                  '<w:p><w:r><w:br w:type="page"/></w:r></w:p>')
+              end
+            end
+          end
+          LUAEOF
+
+      - name: Transform README for DOCX generation
+        run: |
+          tail -n +9 README.md > README_docx.md
+          sed -i 's/<details><summary>\(.*\)<\/summary>/### \1/' README_docx.md
+          sed -i '/<\/details>/d' README_docx.md
+          sed -i 's/> \[!TIP\]/> **TIP:**/' README_docx.md
+
+      - name: Verify transformation
+        run: |
+          echo "=== First 5 lines (frontmatter should be gone) ==="
+          head -5 README_docx.md
+          echo ""
+          echo "=== details tag count (should be 0) ==="
+          DETAILS=$(grep -c '<details>' README_docx.md || echo 0)
+          CLOSE=$(grep -c '</details>' README_docx.md || echo 0)
+          echo "  <details>: $DETAILS"
+          echo "  </details>: $CLOSE"
+
+      - name: Generate DOCX
+        run: |
+          pandoc README_docx.md \
+            --from=gfm+emoji \
+            --to=docx \
+            --lua-filter=pagebreak.lua \
+            --resource-path=. \
+            -o 職務経歴書.docx
+
+      - name: Cleanup
+        run: |
+          rm README_docx.md
+          rm pagebreak.lua
+
+      - name: Upload DOCX as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: 職務経歴書-docx
+          path: 職務経歴書.docx
+          retention-days: 90
