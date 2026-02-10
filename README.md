@@ -206,6 +206,7 @@ css: |-
 - UseCaseの命名規則ADRを策定し、17件のUseCaseをADR準拠にリネームした
 - XXXServiceListener → OnXxxLoadedListener への命名統一を実施した
 - interface を fun interface に統一する方針をADRとして明文化した
+- ADRの作成 -> Claudeでスキル化 -> スキルでADRを参照するのでスキルさえ発動すればADRに準拠したコードが自動的に生成される という仕組みにすることでADRの形骸化を防止
 
 # 工夫した点
 
