@@ -139,6 +139,7 @@ css: |-
 - [GitHub Copilotコードレビュー](https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review)が導入されているが、copilot-instructions.mdの内容が適切ではないため、ハルシネーション頻度が高く、レビュイー・レビュワー双方が対応しなければならない指摘まで無視してしまう頻度が増えていた
 - [oss-licenses-plugin](https://github.com/google/play-services-plugins/tree/main/oss-licenses-plugin)が使用されているが、EdgeToEdgeに対応できず、アップデートされる度に無視できない頻度でライセンス情報が表示出来なくなるなど品質に問題を抱えており、対応される速度が非常に遅い
 - [SwiftExport](https://kotlinlang.org/docs/native-swift-export.html)の導入を検討しているが、誰も手が空いておらず導入検討を行うことができていない
+- [Devin](https://devin.ai/)がチームで使用可能になったが、誰も手が空いておらず初期設定やどのように運用していくかを検討できていない
 - レガシーな「HostService」パターンがテスタビリティとKMP移行の障壁となっていた
   - RxJavaベースの実装が多く、Coroutine移行が進んでいない
   - iOS側との共通化を阻む設計上の問題
@@ -182,6 +183,14 @@ css: |-
 
 - 技術調査からプロダクトへの導入可否の判定までを実施。
   - 現段階ではalpha版であり、suspend関数がサポートされていないなど基本的な機能が揃っていないことから導入は見送るという結論をレポートしチームへ貢献
+
+## Devinを運用可能とし実際にPRを並行で作成させどのように使えるかをチームに示す
+- DevinマシンのセットアップとDevinに対応させるのに相応しい内容のIssueを用意し、可能な限り並行で作業させ性能限界を調査。
+- 一度に20件のIssueを対応させPRの作成からマージまでを完遂できることを確認。
+- Devinは[インターン・ジュニアエンジニアレベルの作業を夜間に任せるのに適している](https://docs.devin.ai/ja/essential-guidelines/when-to-use-devin)ため、Claudeを使用してDevinが滞りなく作業可能な内容までブレークダウンしたIssueを作成。
+- その際にClaudeからDevin用のタスク用文章を作成するための種々のClaudeのスキルも作成し対応。
+- [Devinが提供しているMCP](https://docs.devin.ai/ja/work-with-devin/devin-mcp)ではClaude経由でDevinへ直接指示を与えたりセッション状況の確認ができないので、[Devinが提供しているREST API](https://docs.devin.ai/ja/api-reference/overview)をClaudeにスキル化させ、スキルを使用することでClaudeと連携し作業可能とする対応も実施。
+- 種々のスキルはチームへPRとして公開し、本格導入が決まった際にはそれを基にチームで使用可能にできるよう地検を共有。
 
 ## 開発補助ツールの作成
 
