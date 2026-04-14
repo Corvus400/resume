@@ -117,7 +117,7 @@ css: |-
 
 # 触れた技術スタック
 
-- Kotlin, Kotlin Coroutines, Kotlin Flow, Jetpack Compose, Android, KMP (Kotlin Multiplatform), Swift (iOS連携), Claude Code, Devin, GitHub Actions, Roborazzi (Screenshot Testing), ADR (Architecture Decision Records)
+- Kotlin, Kotlin Coroutines, Kotlin Flow, Jetpack Compose, Android, KMP (Kotlin Multiplatform), Swift (iOS連携), Ktor (Mock Server構築), Claude Code, Devin, GitHub Actions, Roborazzi (Screenshot Testing), ADR (Architecture Decision Records)
 
 # 概要
 
@@ -159,6 +159,8 @@ css: |-
 
 - ClaudeなどのAIエージェントが使用することを前提としたシナリオ・Fixture切り替えをコマンドによって実行可能なMockServerを構築した。
 - このMockServerを使用することで曜日・時間に関係なく任意のシナリオや条件でテストを実行できるようになり、曜日依存や一部前提を整えることが難しいテストを容易に実行可能としテスト効率が向上。
+- 単なるスタブではなくステートフルモックとして設計し、BEの送料・冷凍手数料計算ロジックをSTG実測値ベースで簡略化再現することで、商品追加・削除・数量変更に連動した金額再計算をBE依存なしで動作確認可能とした。
+- エンドポイント追加時にフィクスチャ未実装やドキュメント未登録をコンパイル時・起動時・CI時の3段階で検出する型安全な設計とし、チームでの継続開発における品質を構造的に担保した。
 - Claudeを使用することで高速に要件定義から実装・動作確認までを完遂。
 
 ## KMP対応の基盤整備
