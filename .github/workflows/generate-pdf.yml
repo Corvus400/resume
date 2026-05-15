@@ -6,6 +6,9 @@ on:
     paths: ['README.md']
   workflow_dispatch:
 
+env:
+  PDF_NAME: 職務経歴書
+
 jobs:
   generate-pdf:
     runs-on: ubuntu-latest
@@ -15,51 +18,234 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Japanese fonts
+      - name: Install fonts and weasyprint native dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y fonts-noto-cjk
+          sudo apt-get install -y \
+            fonts-noto-cjk \
+            libpango-1.0-0 \
+            libpangoft2-1.0-0 \
+            poppler-utils
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '22'
+          python-version: '3.12'
 
-      - name: Install md-to-pdf
-        run: npm install md-to-pdf
+      - name: Install weasyprint and markdown
+        run: pip install --upgrade weasyprint markdown
 
-      - name: Transform README for PDF generation
+      # CSS は pdf-report skill (~/.claude/skills/pdf-report/references/slide-style.css) の写し。
+      # SSOT は pdf-report skill 側。upstream を更新した際は本 heredoc を手動同期すること。
+      - name: Write slide-style.css (16:9 1280x720 slide layout)
         run: |
-          cp README.md README_pdf.md
-          sed -i '1s/^<!-- ---/---/' README_pdf.md
-          sed -i 's/^--- -->$/---/' README_pdf.md
-          sed -i 's/<details>/<details open>/g' README_pdf.md
+          cat > "$RUNNER_TEMP/slide-style.css" <<'CSS_EOF'
+          @page {
+            size: 1280px 720px;
+            margin: 0;
+          }
 
-      - name: Verify transformation
-        run: |
-          echo "=== Frontmatter check ==="
-          head -9 README_pdf.md
-          echo ""
-          echo "=== details tag count ==="
-          CLOSED=$(grep -c '<details>' README_pdf.md || echo 0)
-          OPEN=$(grep -c '<details open>' README_pdf.md || echo 0)
-          echo "  <details> (should be 0): $CLOSED"
-          echo "  <details open>: $OPEN"
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
 
-      - name: Generate PDF
-        run: |
-          OPTS='{ "args": ["--no-sandbox"] }'
-          npx md-to-pdf README_pdf.md \
-            --launch-options "$OPTS"
+          body {
+            font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #fff;
+          }
 
-      - name: Rename and cleanup
+          .page {
+            width: 1280px;
+            height: 720px;
+            padding: 48px 72px;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+          }
+
+          .page:last-child {
+            page-break-after: avoid;
+          }
+
+          .page-number {
+            position: absolute;
+            bottom: 24px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 12px;
+            color: #a0aec0;
+          }
+
+          h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a202c;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #e53e3e;
+            margin-bottom: 20px;
+            line-height: 1.3;
+          }
+
+          h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a202c;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2d3748;
+            margin-top: 12px;
+            margin-bottom: 16px;
+            line-height: 1.3;
+          }
+
+          h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #2b6cb0;
+            margin-top: 14px;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #e2e8f0;
+            line-height: 1.3;
+          }
+
+          h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2b6cb0;
+            margin-top: 10px;
+            margin-bottom: 8px;
+          }
+
+          p {
+            margin-bottom: 10px;
+          }
+
+          strong {
+            font-weight: 700;
+          }
+
+          a {
+            color: #2b6cb0;
+            text-decoration: none;
+          }
+
+          ul, ol {
+            margin-left: 24px;
+            margin-bottom: 10px;
+          }
+
+          li {
+            margin-bottom: 4px;
+          }
+
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 14px;
+            font-size: 12px;
+          }
+
+          th {
+            background: #2d4a7a;
+            color: #fff;
+            padding: 8px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 11.5px;
+          }
+
+          td {
+            padding: 7px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+          }
+
+          tr:nth-child(even) td {
+            background: #f7fafc;
+          }
+
+          blockquote {
+            background: #f7fafc;
+            border-left: 4px solid #2b6cb0;
+            padding: 10px 16px;
+            margin-bottom: 14px;
+            font-size: 12.5px;
+          }
+
+          code {
+            background: #edf2f7;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-family: "SF Mono", "Monaco", "Menlo", monospace;
+            font-size: 11px;
+          }
+
+          pre {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 16px 20px;
+            border-radius: 6px;
+            font-family: "SF Mono", "Monaco", "Menlo", monospace;
+            font-size: 11.5px;
+            line-height: 1.6;
+            overflow: hidden;
+            margin-bottom: 14px;
+          }
+
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+          CSS_EOF
+
+      - name: Convert README.md to HTML (16:9 page-split)
         run: |
-          mv README_pdf.pdf 職務経歴書.pdf
-          rm README_pdf.md
+          python3 .github/scripts/build_resume_html.py > "$RUNNER_TEMP/resume.html"
+
+      - name: Verify HTML transformation
+        run: |
+          H_COUNT=$(grep -cE '<h[34]>' "$RUNNER_TEMP/resume.html")
+          echo "Heading (h3/h4) count: $H_COUNT"
+          if [ "$H_COUNT" -lt 5 ]; then
+            echo "::error::<details>/<summary> の Markdown 変換に失敗した可能性があります"
+            exit 1
+          fi
+          PAGE_COUNT=$(grep -cE 'class="page"' "$RUNNER_TEMP/resume.html")
+          echo "Page container count: $PAGE_COUNT"
+          if [ "$PAGE_COUNT" -lt 2 ]; then
+            echo "::error::ページコンテナが正しく分割されていません"
+            exit 1
+          fi
+
+      - name: Generate PDF with weasyprint
+        run: |
+          weasyprint \
+            "$RUNNER_TEMP/resume.html" \
+            "${PDF_NAME}.pdf" \
+            --base-url "${GITHUB_WORKSPACE}" \
+            2> "$RUNNER_TEMP/wp.log"
+          ls -l "${PDF_NAME}.pdf"
+
+      - name: Verify PDF (font warnings)
+        run: |
+          echo "=== weasyprint log ==="
+          cat "$RUNNER_TEMP/wp.log"
+          echo "=== checks ==="
+          if grep -E "WARNING.*Font|missing glyph" "$RUNNER_TEMP/wp.log"; then
+            echo "::error::フォント警告が weasyprint から出力されました (日本語文字化けの可能性)"
+            exit 1
+          fi
+          pdfinfo "${PDF_NAME}.pdf" | grep -E '^(Pages|Page size):'
 
       - name: Upload PDF as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: 職務経歴書
-          path: 職務経歴書.pdf
+          name: ${{ env.PDF_NAME }}
+          path: ${{ env.PDF_NAME }}.pdf
           retention-days: 90

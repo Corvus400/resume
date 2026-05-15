@@ -185,6 +185,8 @@ css: |-
 > :identification_card: が付いている経歴は正社員としての所属で、それ以外は業務委託としての職歴になります。<br>
 > 社名の無い部分に関しては、所属企業でのSESでの職歴になります。
 
+<div class="page-break"></div>
+
 <details><summary>2025年09月 - 2026年03月 / BtoC / オイシックス・ラ・大地株式会社 / Oisix ECアプリ開発</summary>
 
 # 触れた技術スタック
@@ -633,6 +635,8 @@ css: |-
 
 </details>
 
+<div class="page-break"></div>
+
 <details><summary>2020年10月 - 2021年03月 / BtoBtoC / 株式会社くすりの窓口 / お薬手帳アプリ開発</summary>
 
 # 概要
@@ -774,6 +778,8 @@ css: |-
 
 </details>
 
+<div class="page-break"></div>
+
 <details><summary>2018年04月 - 2018年05月 / BtoB / ローカル仮想通貨アプリ開発 :identification_card: </summary>
 
 # 概要
@@ -873,6 +879,8 @@ css: |-
 
 </details>
 
+<div class="page-break"></div>
+
 <details><summary>2016年06月 - 2017年01月 / BtoC / ECサイトアプリ開発 :identification_card: </summary>
 
 # 概要
@@ -917,6 +925,8 @@ css: |-
 
 </details>
 
+<div class="page-break"></div>
+
 <details><summary>2016年02月 - 2016年03月 / BtoB / 株式会社ハコブネ / Androidビーコンアプリ開発 :identification_card: </summary>
 
 # 概要
@@ -928,6 +938,8 @@ css: |-
 
 </details>
 
+<div class="page-break"></div>
+
 <details><summary>2016年01月 - 2016年02月 / BtoC / 株式会社ハコブネ / プログラミング教育講師・チューター :identification_card: </summary>
 
 # 概要
@@ -936,6 +948,8 @@ css: |-
 - Scratchを使用。
 
 </details>
+
+<div class="page-break"></div>
 
 <details><summary>2015年11月 - 2016年05月 / BtoC / 株式会社ハコブネ / 遺言動画保存アプリ開発 :identification_card: </summary>
 
