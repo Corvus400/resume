@@ -18,24 +18,26 @@ css: |-
 | Android Mobile | 8年(96ヶ月)  |
 | Android TV     | 6ヶ月        |
 | iOS            | 8ヶ月        |
-| Flutter        | 2ヶ月        |
+| Flutter        | 4ヶ月        |
 | Cocos2d-x      | 1.5年(18ヶ月) |
 
 ## AI活用歴(ChatGPT等は割愛)
 
 |      名称      | 経験歴        |
 |:---------------|:-----------|
-| Claude Code | 7ヶ月 |
+| Claude Code | 9ヶ月 |
 | GitHub Copilot CLI | 2ヶ月 |
 | Devin | 2ヶ月 |
+| Codex | 2ヶ月 |
+| Claude Design | 1ヶ月 |
 
 ## 言語の経験歴
 
 |     名称    | 経験歴                          |
 |:------------|:-----------------------------|
-| Kotlin      | 7年(84ヶ月)                    |
+| Kotlin      | 7年(86ヶ月)                    |
 | Swift       | 8ヶ月                          |
-| Dart        | 2ヶ月                          |
+| Dart        | 4ヶ月                          |
 | C++         | 1.5年(18ヶ月)                   |
 | Java        | 3年(35ヶ月)                     |
 | JavaScript  | (業務でのモック修正や個人的な趣味で)6ヶ月相当     |
@@ -87,24 +89,11 @@ css: |-
 
 </details>
 
-<details><summary>Flutter学習</summary>
-
-- [Flutter for Android developers](https://docs.flutter.dev/get-started/flutter-for/android-devs), [Flutter Layout Cheat Sheet](https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e), [Flutter Gallery](https://gallery.flutter.dev/#/) の内容を踏まえて学習。
-  - https://github.com/Corvus400/my-flutter-cook-book-animation-app
-  - https://github.com/Corvus400/my-flutter-for-android-developers-app
-  - https://github.com/Corvus400/my_flutter_layout_cheat_seat_app
-  - https://github.com/Corvus400/my_flutter_animation_tutorial_app
-  - https://github.com/Corvus400/my-flutter-cook-book-effects-app
-
-</details>
-
 <details><summary>Android Developers の翻訳動画を作成</summary>
 
 - 参画先のキャッチアップ時間で話題として提供 https://zenn.dev/todayama_r
 
 </details>
-
-<div class="page-break"></div>
 
 ## 携わったプロジェクト
 
