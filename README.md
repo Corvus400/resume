@@ -95,6 +95,89 @@ css: |-
 
 </details>
 
+<div class="page-break"></div>
+
+## 個人開発
+
+<details><summary>個人開発 / fictional-drug-and-disease-ref / Flutter医療リファレンスアプリ & Mock Server</summary>
+
+# 触れた技術スタック
+
+- Flutter, Dart, Riverpod, drift (SQLite), Dio + Retrofit, Ktor 3.x, Kotlin, kotlinx.serialization, ktor-openapi-tools, Apple Container, Spotless, ktlint, detekt, HTML, CSS, Playwright (Chromium), pre-commit, Renovate, GitHub Actions, Claude Code, Codex
+
+# 概要
+
+- 架空の医薬品・疾患データを扱う Flutter 製リファレンスアプリと、対応する Ktor 製 Mock Server を個人開発。
+- 仕様 / デザイン / 実装 を独立した 3 リポジトリに分離し、上流から下流まで一人で完遂した構成。
+- 実装リポは GitHub で公開。
+  - [Flutter アプリ](https://github.com/Corvus400/fictional-drug-and-disease-ref-flutter)
+  - [Mock Server](https://github.com/Corvus400/fictional-drug-and-disease-ref-mock-server)
+- 仕様リポ・デザインリポは非公開で管理しており、面談時に内容を提示可能。
+- 医療領域を題材にしているが扱うデータは全て架空であり、README / DISCLAIMER.md / API 応答の 3 層で実在情報との混同を避ける旨を明示している。
+
+# 担当
+
+- 仕様策定 / デザインプロトタイプ / フロント (Flutter) / Mock BE (Ktor) / CI/CD / VRT 基盤すべてを一人で設計・実装。
+
+# 課題
+
+- 医療系のドメインを扱う前提で、画面・データ・配色のリグレッションを継続的に検出する仕組みが必要。
+- フロントと BE 間で l10n (画面文言や enum 名称) がズレた際、ユーザー影響が大きいが目視レビューでは検出が難しい。
+- 個人開発でも、仕様 → デザイン → 実装の上流フローを再現し、実装着手前に画面・データの認識ズレを潰したい。
+- Flutter / iOS / Android で同じ API を共有する前提のため、BE のシナリオ切替を AI エージェントからも操作可能な形で用意したい。
+
+# 取り組み
+
+## 仕様の独立リポジトリ化
+
+- アプリ仕様を実装リポとは別の repository に切り出し、12 件の Markdown と OpenAPI 定義 (`openapi.json`)、Fixture JSON を実装着手前に確定した。
+- 医薬品・疾患モデルは PMDA 添付文書の項目構造を参照した架空データスキーマとして設計し、ファイルを分けて詳細化している (医薬品モデル詳細 / 疾患モデル詳細 / 詳細画面データ構造設計プラン)。
+- ローカル DB はテーマ設定 / 計算履歴 / 閲覧履歴 / ブックマーク / 検索履歴の 5 種を個別の仕様書として先行確定し、実装側の drift スキーマと 1 対 1 で対応させた。
+- API 仕様は OpenAPI で先に定義した上で、Mock Server 側で `ktor-openapi-tools` を使い同じ定義を実装側からも参照する形に揃え、仕様と実装の SSOT を一致させた。
+
+## デザインの独立リポジトリ化 (HTML プロトタイプ + VRT)
+
+- Flutter 実装の前段として、Design System (色 / radii / iconography / Chips・ICD10 等) と 6 系統の画面 (検索 / 詳細 / 計算ツール / ブックマーク / 閲覧履歴 / Design System) を HTML で先行プロトタイプ化した。
+- Playwright Chromium による pre-commit / pre-push VRT を Git hook で必ず走らせ、baseline からの差分を承認なしには通せない構成にした。
+- DOM 構造の不変条件 (TOC ↔ section アンカー対応・禁止セレクタ等) は JSON で記述する HTML audit rules を導入し、htmlhint や VRT では拾えない構造ズレを CI 前に落とすようにした。
+- VRT diff が出た際は 3-pane PNG (expected / diff / actual) を Claude Code / Codex に読ませ、`fulfillment_percent` と `explanation` を JSON で返させる視覚レビューフローを設計。閾値ベースで承認 / 再修正を機械的に判定できる仕組みにしている。
+
+## Golden VRT を Dart で clean-room 再実装
+
+- Flutter 実装側にも独自の Golden VRT を内蔵。`test/golden/_comparator/` 配下に、Roborazzi の出力仕様 (`*_compare.png` / `*_actual.png` / JSON schema) を参照した Dart 実装を置き、third_party 表記を README に併記。
+- CI では外部 PR を trust 分類で拒否し、信頼済み PR のみ macOS runner 上で 4 shard 並列実行する構成にした。
+
+## l10n contract test
+
+- Mock Server 側 (Kotlin) の enum KDoc を SSOT として、Flutter 側 arb との対応を `test/l10n/drug_filter_alignment_test.dart` で照合。
+- 命名ズレや抜けを CI で落とすことで、両リポジトリ間のドキュメント整合性を構造的に担保している。
+
+## シナリオベースの Mock Server
+
+- `X-Mock-Scenario` ヘッダで単発リクエストの応答を切り替え、Admin API (`/__admin/configs` / `/__admin/reset`) で画面全体の状態を固定する 2 系統を併設。
+- Model → Fixture (`FixtureProvider<T>`) → Route (`scenarioRoute<T>()`) → `Routing.kt` 登録の 4 層構成にすることで、新規エンドポイント追加時の手順を構造化した。
+
+## ライブドキュメント (OpenAPI)
+
+- ktor-openapi-tools で `/swagger` / `/redoc` / `/openapi.json` をコードから自動生成し、API 仕様の二重管理を回避。
+- `/__admin/catalog` でシナリオ・Fixture の概要もサーバー起動だけで参照可能にした。
+
+## 品質ゲート
+
+- Spotless + ktlint + detekt + pre-commit hooks + GitHub Actions で、コードスタイル・静的解析・依存更新レビューを仕組みで担保。
+- 依存更新は Renovate、外部 PR は CI で拒否する運用を README に明示した。
+
+# 工夫した点
+
+- 業務 (Oisix) で構築した Ktor ベースのシナリオモック設計を、フロント側 (Flutter) まで含めて個人開発でも踏襲した。
+- 仕様 / デザイン / 実装 を独立したリポジトリに分け、実装着手前に上流のズレを潰せる構成にした。
+- 上流から下流までを 1 人で握ることで、API スキーマ・DB スキーマ・画面プロトタイプ・実装の対応関係を都度確認しながら進められる構成にした。
+- アーキテクチャ図を README 内に Mermaid で配置し、初見でも責務境界を把握できるようにした。
+
+</details>
+
+<div class="page-break"></div>
+
 ## 携わったプロジェクト
 
 > [!TIP]
