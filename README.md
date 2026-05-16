@@ -176,6 +176,66 @@ css: |-
 
 </details>
 
+<details><summary>個人開発 / resume-flutter / Flutter Webポートフォリオ履歴書</summary>
+
+# 触れた技術スタック
+
+- Flutter, Dart, go_router, Flutter Web, GitHub Pages, YAML, Noto Sans JP, GitHub Actions, Dependabot, Renovate, Golden Test, Integration Test, Claude Design, Claude Code, Codex
+
+# 概要
+
+- この職務経歴書を Flutter Web で構造化して見せるためのポートフォリオ履歴書アプリを個人開発。
+- 職務経歴・スキル・個人開発・業務外活動の本文データを YAML に集約し、生成済み Dart 定数を UI から参照する構成にしている。
+- 実装リポジトリと公開ページは GitHub で公開。
+  - [GitHub リポジトリ](https://github.com/Corvus400/resume-flutter)
+  - [公開ページ](https://corvus400.github.io/resume-flutter/)
+- Flutter Web の小規模ポートフォリオでありながら、コンテンツ管理・生成チェック・レスポンシブ UI・公開前 hardening までを一通り含めている。
+
+# 担当
+
+- 要件定義 / デザイン反映 / Flutter Web 実装 / コンテンツ生成基盤 / テスト / GitHub Pages デプロイ / 公開リポジトリ運用を一人で設計・実装。
+
+# 課題
+
+- Markdown の職務経歴書だけでは、スキル・職務経歴・個人開発の情報を画面単位で整理して見せにくい。
+- 履歴書本文と UI 実装が密結合すると、本文更新時に UI の修正漏れや生成物の drift が起きやすい。
+- 公開ポートフォリオとして GitHub Pages に出すため、秘密情報・個人情報・ローカル環境情報の混入を避ける必要がある。
+- desktop / phone の両方で閲覧される前提のため、レスポンシブ表示やナビゲーションの崩れを継続的に検出したい。
+
+# 取り組み
+
+## YAML SSOT のコンテンツ管理
+
+- 職務経歴・スキル・業務外活動・個人開発のデータを `content/resume/` 配下の YAML に集約し、履歴書本文と UI 実装を分離した。
+- `tool/generate_resume_content.dart` で YAML から型付き Dart 定数を生成し、画面側は生成済みの `lib/data/generated/resume_content.g.dart` を参照する構成にした。
+- CI と同じ `--check` モードを用意し、YAML と生成済み Dart 定数のズレを検出できるようにした。
+
+## Flutter Web の履歴書 UI
+
+- Home / Work Experience / Personal Projects / Outside Activities / Skills の 5 系統の画面を用意し、職務経歴を Web 上で辿れる構成にした。
+- GitHub Pages 配信を前提に、`/resume-flutter/` base href と hash strategy で静的ホスティングに合わせた。
+- 日本語表示に合わせて Noto Sans JP を同梱し、ポートフォリオ用途で読みやすい typography を優先した。
+
+## デザイン契約とテスト
+
+- desktop / phone の golden test を用意し、主要画面の表示崩れを画像差分で検出する構成にした。
+- navigation contract test と integration test で、主要セクション間の遷移が壊れていないことを確認できるようにした。
+- Widget test / `flutter analyze` / `flutter test` / 生成チェックを組み合わせ、本文データ・UI・遷移の変更をまとめて検証できるようにした。
+
+## 公開リポジトリとしての hardening
+
+- MIT License / SECURITY.md / CONTRIBUTING.md / CODE_OF_CONDUCT.md を整備し、公開リポジトリとしての入口を明確にした。
+- GitHub Actions の selected actions / SHA pinning、Dependabot / Renovate、外部 PR の扱いを README に明記し、依存更新と CI 実行範囲を制御した。
+- tracked tree、Git 履歴、Issue / Pull Request / Actions log に秘密情報・ローカル絶対パス・個人メールが混入しないことを公開前に確認する運用にした。
+
+# 工夫した点
+
+- 職務経歴書を単なる Markdown ではなく、構造化データ・生成・UI・テスト・デプロイを持つ Flutter Web プロダクトとして実装した。
+- 本文データの更新と UI 実装の責務を分けることで、履歴書更新時に画面実装へ不要な変更が波及しにくい構成にした。
+- 個人開発の成果物自体を履歴書に組み込み、Flutter Web / CI / 公開運用 / AI 活用の実践例として提示できるようにした。
+
+</details>
+
 <div class="page-break"></div>
 
 ## 携わったプロジェクト
