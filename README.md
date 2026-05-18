@@ -108,11 +108,12 @@ css: |-
 # 概要
 
 - 架空の医薬品・疾患データを扱う Flutter 製リファレンスアプリと、対応する Ktor 製 Mock Server を個人開発。
-- 仕様 / デザイン / 実装 を独立した 3 リポジトリに分離し、上流から下流まで一人で完遂した構成。
-- 実装リポは GitHub で公開。
+- 仕様 / デザイン / Flutter アプリ / Mock Server を独立したリポジトリに分離し、上流から下流まで一人で完遂した構成。
+- 関連リポジトリは GitHub で公開。
+  - [仕様・API 契約](https://github.com/Corvus400/specification)
+  - [HTML デザイン仕様 / VRT](https://github.com/Corvus400/design-blueprint)
   - [Flutter アプリ](https://github.com/Corvus400/fictional-drug-and-disease-ref-flutter)
   - [Mock Server](https://github.com/Corvus400/fictional-drug-and-disease-ref-mock-server)
-- 仕様リポ・デザインリポは非公開で管理しており、面談時に内容を提示可能。
 - 医療領域を題材にしているが扱うデータは全て架空であり、README / DISCLAIMER.md / API 応答の 3 層で実在情報との混同を避ける旨を明示している。
 
 # 担当
@@ -128,18 +129,21 @@ css: |-
 
 # 取り組み
 
-## 仕様の独立リポジトリ化
+## specification による仕様・API 契約管理
 
 - アプリ仕様を実装リポとは別の repository に切り出し、12 件の Markdown と OpenAPI 定義 (`openapi.json`)、Fixture JSON を実装着手前に確定した。
+- `specification` は特定アプリ専用ではなく、複数のポートフォリオアプリの仕様書・API 契約・設計メモを管理する repository として公開している。
 - 医薬品・疾患モデルは PMDA 添付文書の項目構造を参照した架空データスキーマとして設計し、ファイルを分けて詳細化している (医薬品モデル詳細 / 疾患モデル詳細 / 詳細画面データ構造設計プラン)。
 - ローカル DB はテーマ設定 / 計算履歴 / 閲覧履歴 / ブックマーク / 検索履歴の 5 種を個別の仕様書として先行確定し、実装側の drift スキーマと 1 対 1 で対応させた。
 - API 仕様は OpenAPI で先に定義した上で、Mock Server 側で `ktor-openapi-tools` を使い同じ定義を実装側からも参照する形に揃え、仕様と実装の SSOT を一致させた。
 
-## デザインの独立リポジトリ化 (HTML プロトタイプ + VRT)
+## design-blueprint による HTML デザイン仕様 / VRT
 
 - Flutter 実装の前段として、Design System (色 / radii / iconography / Chips・ICD10 など) と 6 系統の画面 (検索 / 詳細 / 計算ツール / ブックマーク / 閲覧履歴 / Design System) を HTML で先行プロトタイプ化した。
+- `design-blueprint` では、Claude Design で作成した HTML を実装向けの design spec として整え、Flutter 実装や mock-server fixture と照合した契約を仕様内に残している。
 - Playwright Chromium による pre-commit / pre-push VRT を Git hook で必ず走らせ、baseline からの差分を承認なしには通せない構成にした。
 - DOM 構造の不変条件 (TOC ↔ section アンカー対応・禁止セレクタなど) は JSON で記述する HTML audit rules を導入し、htmlhint や VRT では拾えない構造ズレを CI 前に落とすようにした。
+- `visual:manifest` で `[data-frame-label]` ごとの crop manifest を出し、代表スクリーンショットだけでは見落とす状態差分もレビュー対象にした。
 - VRT diff が出た際は 3-pane PNG (expected / diff / actual) を Claude Code / Codex に読ませ、`fulfillment_percent` と `explanation` を JSON で返させる視覚レビューフローを設計。しきい値ベースで承認 / 再修正を機械的に判定できる仕組みにしている。
 
 ## Golden VRT を Dart で clean-room 再実装
@@ -233,6 +237,66 @@ css: |-
 - 職務経歴書を単なる Markdown ではなく、構造化データ・生成・UI・テスト・デプロイを持つ Flutter Web プロダクトとして実装した。
 - 本文データの更新と UI 実装の責務を分けることで、履歴書更新時に画面実装へ不要な変更が波及しにくい構成にした。
 - 個人開発の成果物自体を履歴書に組み込み、Flutter Web / CI / 公開運用 / AI 活用の実践例として提示できるようにした。
+
+</details>
+
+<details><summary>個人開発 / video-capture-mcp / AIエージェント向け画面録画 MCP Server</summary>
+
+# 触れた技術スタック
+
+- Python 3.11 / 3.12, MCP, FastMCP, macOS screen recording, iOS Simulator, Android / adb, ffmpeg / ffprobe, PyPI, uvx, Homebrew, pytest, ruff, mypy, GitHub Actions, release-please, Claude Code, Codex
+
+# 概要
+
+- AI エージェントがアプリ操作中の画面変化を録画し、ffmpeg で key frame を抽出できる stdio MCP server を個人開発。
+- 静止画だけでは見落としやすいキーボード表示、hover / unhover、短時間だけ出るレイアウト崩れを、動画と抽出フレームで確認できるようにした。
+- GitHub / PyPI / Homebrew で公開。
+  - [GitHub リポジトリ](https://github.com/Corvus400/video-capture-mcp)
+  - [PyPI](https://pypi.org/project/video-capture-mcp/)
+- `uvx video-capture-mcp` だけで Claude Code / Codex / VS Code / Cursor / Goose などの MCP client から起動できる構成にしている。
+
+# 担当
+
+- 要件定義 / MCP tool 設計 / macOS・iOS Simulator・Android の録画 backend / frame 抽出 / テスト / CI / package 配布 / ドキュメント整備を一人で設計・実装。
+
+# 課題
+
+- UI の不具合や design check では、単発スクリーンショットだけでは動きの途中に起きる崩れを説明しにくい。
+- AI エージェントに画面操作を任せる場合、録画開始・操作・録画停止・frame 抽出までを agent workflow から呼べる必要がある。
+- macOS / iOS Simulator / Android で録画手段が異なるため、tool interface は共通化しつつ backend ごとの制約を隠しすぎない設計が必要。
+- 録画ファイルはローカルに生成されるため、保存先・権限・停止漏れ・空ファイル検出を安全に扱う必要がある。
+
+# 取り組み
+
+## MCP tool interface の設計
+
+- `start_recording` / `stop_recording` / `record_and_extract` / `extract_frames` を用意し、録画と frame 抽出を agent から明示的に操作できるようにした。
+- manual start / stop と fixed duration の両方に対応し、UI 操作を挟む検証と短い one-shot capture のどちらにも使える構成にした。
+- `stop_recording` の戻り値に `file_exists` と `file_size_bytes` を含め、録画失敗や空ファイルを後続解析前に検出できるようにした。
+
+## macOS / iOS Simulator / Android backend
+
+- macOS は `screencapture`、iOS Simulator は `xcrun simctl io recordVideo`、Android は `adb shell screenrecord` を使い、3 系統の録画 backend を同じ MCP server にまとめた。
+- macOS では app window bounded recording を用意し、対象アプリの前面化・可視領域測定・region 指定録画までを tool 化した。
+- iOS Simulator / Android では device UDID や adb serial を指定できるようにし、複数端末環境でも対象を固定して録画できるようにした。
+
+## frame extraction と UI 検証支援
+
+- ffmpeg / ffprobe を使って scene detection または fixed fps で PNG frame を抽出し、必要に応じて FastMCP `Image` として inline 返却できるようにした。
+- `hover_sequence` / `move_pointer` を用意し、click ではなく mouse movement が必要な UI demo や hover state の確認にも使えるようにした。
+- 録画後の orientation normalization を組み込み、portrait / landscape の扱いを後続レビューでそろえやすくした。
+
+## 品質ゲートと配布
+
+- pytest で backend・session・frame extraction・window 計測・orientation 処理を分けて検証している。
+- CI では ruff / ruff format / mypy / macOS matrix test / package build / twine check を実行し、MCP server と配布物の両方を確認している。
+- PyPI、`uvx`、Homebrew の導線を README にまとめ、複数 MCP client 向けの登録例を用意した。
+
+# 工夫した点
+
+- 「agent が操作した UI を後から説明できる証拠に残す」ことを目的に、録画・停止・抽出・失敗検出を MCP tool の単位で明確に分けた。
+- backend の違いを完全に隠すのではなく、device / serial / region / orientation など実運用で必要な指定を option として残した。
+- `video-capture-mcp` 自体を、Flutter / HTML design spec / desktop app 検証で使える横断的な agent tooling として切り出した。
 
 </details>
 
