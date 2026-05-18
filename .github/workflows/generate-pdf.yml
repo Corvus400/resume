@@ -3,7 +3,9 @@ name: Generate PDF from README
 on:
   push:
     branches: [master]
-    paths: ['README.md']
+    paths:
+      - 'README.md'
+      - '.github/workflows/generate-pdf.yml'
   workflow_dispatch:
 
 env:
@@ -61,11 +63,11 @@ jobs:
 
           .page {
             width: 1280px;
-            height: 720px;
+            min-height: 720px;
             padding: 48px 72px;
             page-break-after: always;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
           }
 
           .page:last-child {
@@ -242,6 +244,50 @@ jobs:
             exit 1
           fi
           pdfinfo "${PDF_NAME}.pdf" | grep -E '^(Pages|Page size):'
+
+      - name: Verify PDF contains README headings
+        run: |
+          pdftotext "${PDF_NAME}.pdf" "$RUNNER_TEMP/resume-pdf.txt"
+          python3 <<'PY'
+          import os
+          import re
+          import sys
+          from pathlib import Path
+
+          readme = Path("README.md").read_text(encoding="utf-8")
+          pdf_text = (Path(os.environ["RUNNER_TEMP"]) / "resume-pdf.txt").read_text(encoding="utf-8")
+
+          def normalize(value: str) -> str:
+              value = value.replace("&amp;", "&")
+              value = re.sub(r"`([^`]*)`", r"\1", value)
+              value = re.sub(r"[:_\\s\\W]+", "", value, flags=re.UNICODE)
+              return value
+
+          expected: list[tuple[int, str]] = []
+          for line_number, line in enumerate(readme.splitlines(), 1):
+              heading = re.match(r"^(#{1,3})\\s+(.+)$", line)
+              if heading:
+                  expected.append((line_number, heading.group(2).strip()))
+
+              summary = re.search(r"<summary>(.*?)</summary>", line)
+              if summary:
+                  expected.append((line_number, summary.group(1).strip()))
+
+          normalized_pdf = normalize(pdf_text)
+          missing = [
+              (line_number, title)
+              for line_number, title in expected
+              if normalize(title) and normalize(title) not in normalized_pdf
+          ]
+
+          if missing:
+              print("README headings missing from generated PDF:")
+              for line_number, title in missing:
+                  print(f"- README.md:{line_number}: {title}")
+              sys.exit(1)
+
+          print(f"Verified {len(expected)} README headings in generated PDF.")
+          PY
 
       - name: Upload PDF as artifact
         uses: actions/upload-artifact@v4
