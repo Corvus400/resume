@@ -180,6 +180,71 @@ css: |-
 
 </details>
 
+<details><summary>個人開発 / fictional-drug-and-disease-ref-backend-kotlin / Ktor実DBバックエンド API</summary>
+
+# 触れた技術スタック
+
+- Kotlin 2.x, Ktor 3.x, PostgreSQL, Exposed, Flyway, HikariCP, kotlinx.serialization, smiley4 OpenAPI, RFC 9457 problem+json, JWT, CORS, rate limiting, Micrometer / Prometheus, Testcontainers, Apple Container, Cloudflare Tunnel, Spotless, ktlint, detekt, GitHub Actions, Claude Code, Codex
+
+# 概要
+
+- 架空の医薬品・疾患データを扱う Flutter / iOS / Android クライアント向け API バックエンドを Ktor で個人開発。
+- Mock Server で検証していた API contract を、PostgreSQL・typed domain model・OpenAPI・コンテナ起動スクリプトで確認できる実 DB backed API に発展させた。
+- 実装リポジトリは GitHub で公開。
+  - [GitHub リポジトリ](https://github.com/Corvus400/fictional-drug-and-disease-ref-backend-kotlin)
+- 医療領域を題材にしているが扱うデータは全て架空であり、README / DISCLAIMER.md / API 応答の層で実在情報との混同を避ける旨を明示している。
+
+# 担当
+
+- 要件整理 / Ktor API 実装 / PostgreSQL スキーマ・seed 設計 / OpenAPI 契約管理 / セキュリティ・可観測性 / ローカルデプロイ / CI 品質ゲートを一人で設計・実装。
+
+# 課題
+
+- Mock Server だけでは、実 DB・migration・transaction boundary を含む API 運用面の検証が不足する。
+- Flutter / iOS / Android が同じ API を利用する前提のため、レスポンススキーマ・エラー形式・検索フィルタの互換性を継続的に検出する必要がある。
+- 個人開発のバックエンドでも、公開可能な形にするには secret 混入防止、公開範囲の制御、metrics や admin endpoint の保護が必要。
+- ローカルで再現しやすい検証環境を用意しつつ、Cloudflare Tunnel で公開する場合も origin direct access や内部 metrics 露出を避ける必要がある。
+
+# 取り組み
+
+## Ktor 3 API と typed domain model
+
+- `/v1/drugs` / `/v1/diseases` / `/v1/categories` / image endpoints を実装し、一覧・詳細・カテゴリ・画像取得を同じ API surface にまとめた。
+- 医薬品・疾患の nested model と enum を Kotlin の型として管理し、`kotlinx.serialization` の snake_case JSON として返す構成にした。
+- query parsing は route handler の入口に寄せ、不正な filter / sort / pagination を validation error として返すようにした。
+
+## PostgreSQL data layer
+
+- Flyway migration で schema と seed data を管理し、HikariCP / Exposed を使って PostgreSQL に接続する構成にした。
+- Mock Server 由来の fixture を fixed seed SQL として取り込み、120 件の医薬品と 80 件の疾患を実 DB で検索・取得できるようにした。
+- repository / query service を分け、DB アクセスの失敗を domain error に変換して API 層へ返す責務を明確にした。
+
+## RFC 9457 problem+json と API contract
+
+- domain error を RFC 9457 形式の `application/problem+json` に統一し、validation / not found / rate limited / internal error を同じ形で扱えるようにした。
+- smiley4 OpenAPI で `/openapi.json` / Swagger / ReDoc を生成し、live API から契約を確認できるようにした。
+- `contract/mock-openapi.json` との 2xx response schema 互換をテストし、Mock Server から実 DB backend へ移行しても client contract が崩れないようにした。
+
+## セキュリティ・可観測性・公開運用
+
+- JWT admin route、CORS、rate limiting、Forwarded Headers を組み込み、公開時にも最低限の保護を持つ production surface にした。
+- CallId / structured JSON logging / MDCContext / Micrometer + Prometheus を導入し、health と readiness を DB dependency の有無で分離した。
+- `/metrics` は CIDR allowlist と Cloudflare ingress block の二段で守り、公開 API と内部観測 endpoint の扱いを分けた。
+
+## ローカルデプロイと品質ゲート
+
+- Apple Container 用の `scripts/start.sh` / `scripts/stop.sh` を用意し、PostgreSQL と Ktor app を localhost bind で起動できるようにした。
+- `--public` 指定時だけ Cloudflare Tunnel を起動し、通常起動と公開起動を明示的に分けた。
+- Testcontainers を使った repository / route / migration / OpenAPI contract test、Spotless、detekt、GitHub Actions の full gate で品質を確認している。
+
+# 工夫した点
+
+- Mock Server のシナリオ検証から、実 DB・OpenAPI・deployment script を持つ backend へ段階的に発展させ、client contract を壊さずに運用面の検証範囲を広げた。
+- エラー応答や query validation を型とテストで固定し、Flutter / iOS / Android の各クライアントが同じ失敗形式を扱えるようにした。
+- 個人開発でも public-ready な入口を意識し、secret・metrics・admin route・origin 公開範囲を README と script の両方で制御する構成にした。
+
+</details>
+
 <details><summary>個人開発 / resume-flutter / Flutter Webポートフォリオ履歴書</summary>
 
 # 触れた技術スタック
