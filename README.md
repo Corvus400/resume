@@ -245,6 +245,64 @@ css: |-
 
 </details>
 
+<details><summary>個人開発 / fictional-drug-and-disease-ref-cms / React製 医薬品・疾患データ管理 CMS</summary>
+
+# 触れた技術スタック
+
+- React 19, TypeScript, Vite, TanStack Router, TanStack Query, React Hook Form, Zod, Tailwind CSS, Zustand, Radix UI, Biome, ESLint, Vitest, React Testing Library, Playwright, pnpm, pre-commit, Renovate, Gitleaks, GitHub Actions, Claude Code, Codex
+
+# 概要
+
+- 架空の医薬品・疾患データ (drug / disease レコードと drug 画像) を編集するための、ローカル限定の管理画面 (CMS) を個人開発。
+- バックエンド ([fictional-drug-and-disease-ref-backend-kotlin](https://github.com/Corvus400/fictional-drug-and-disease-ref-backend-kotlin)) の、ローカル限定・外部秘匿の管理面に接続するクライアントとして、一般利用者向けの公開アプリ (Flutter) とは分離した管理者専用ツール。
+- 実装リポジトリは GitHub で公開。
+  - [GitHub リポジトリ](https://github.com/Corvus400/fictional-drug-and-disease-ref-cms)
+- 医療領域を題材にしているが扱うデータは全て架空であり、README / DISCLAIMER.md の層で実在情報との混同を避ける旨を明示している。
+
+# 担当
+
+- 要件整理 / React + TypeScript フロント実装 / フォーム・バリデーション設計 / バックエンド管理 API 連携 / セキュリティ運用 / CI 品質ゲートを一人で設計・実装。
+
+# 課題
+
+- backend-kotlin の管理 API に対し、drug / disease の入れ子・配列・enum を含む複雑なデータを GUI から安全に編集できる管理面が必要。
+- 公開アプリの読み取り経路と管理面を分離し、管理ツールを公開デプロイ対象から外して秘匿する必要がある。
+- 入力検証エラー・認証エラー・編集競合といった管理操作特有の失敗を、利用者が把握できる形で表示する必要がある。
+- 個人開発でも、秘密情報・認証トークンの混入や永続化を防ぎ、依存更新や CI 実行範囲を仕組みで制御する必要がある。
+
+# 取り組み
+
+## React + TypeScript の管理 UI
+
+- drug / disease の一覧・検索・詳細表示と、作成・編集・削除を GUI から行えるようにした。
+- nested フィールド / 配列フィールド / enum フィールドの編集、関連 drug / disease の選択、drug 画像の PNG アップロードとプレビューに対応した。
+- 入力検証エラー・認証エラー・編集競合をユーザーに提示する構成にした。
+
+## フォーム・状態管理・データ取得
+
+- React Hook Form + Zod で入力検証を型と schema で固定し、TanStack Query でサーバー状態のキャッシュ・非同期取得を管理した。
+- TanStack Router でルーティングを構成し、ローカル状態は Zustand で扱う構成にした。
+
+## ローカル限定・秘匿運用とセキュリティ
+
+- CMS はローカル管理用途のクライアントとして設計し、公開ホスティングでの運用を想定しない構成にした。
+- 管理トークンをブラウザの永続ストレージに保存せず、API 接続先や認証情報は環境変数で管理し、リポジトリに秘密情報を含めない運用にした。
+- Gitleaks で秘密情報スキャンを行い、混入を仕組みで防いだ。
+
+## 品質ゲートと公開運用
+
+- Biome (lint + format) / ESLint (React Hooks lint) / Vitest + React Testing Library / Playwright (E2E) を用意し、pre-commit hook で lint + format、push 前に typecheck + test + hooks lint を実行する構成にした。
+- GitHub Actions の CI で actor を信頼度分類し、Corvus400 と Renovate のみ verify を実行、外部 PR は CI で拒否する運用にした。
+- 依存更新は Renovate で管理し、MIT License / SECURITY.md / CONTRIBUTING.md / DISCLAIMER.md を整備した公開リポジトリとした。
+
+# 工夫した点
+
+- 公開アプリの読み取り経路と管理面を分離し、管理ツールをローカル限定・公開デプロイ非対象として秘匿する構成にした。
+- backend-kotlin の管理 API に接続する CMS をファミリーの一部として加え、仕様 / デザイン / Flutter / Mock Server / 実 DB backend / 管理 CMS まで上流から下流を一人で握る構成を拡張した。
+- 業務 (Oisix) で意識した品質ゲート・信頼度ベース CI・秘密情報混入防止を、フロントエンド (React) の個人開発でも仕組みとして踏襲した。
+
+</details>
+
 <details><summary>個人開発 / resume-flutter / Flutter Webポートフォリオ履歴書</summary>
 
 # 触れた技術スタック
