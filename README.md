@@ -97,6 +97,14 @@ css: |-
 
 <div class="page-break"></div>
 
+## 技術記事・アウトプット
+
+- [Claude Code と Codex の両方に、機密情報と個人情報を漏らさせない hook を作った話](https://zenn.dev/todayama_r/articles/multi-agent-secret-pii-guard-hooks)
+  - Claude Code と Codex を併用する開発環境向けに、機密情報のコミット混入と個人情報の PR / Issue 本文への混入を防ぐ多層防御 hook を設計・実装し、その内容を記事化しました。
+  - gitleaks による共有 git 関門 (L1) と、各エージェント独立の hook (L2) を組み合わせた構成について解説しています。
+
+<div class="page-break"></div>
+
 ## 個人開発
 
 <details><summary>個人開発 / fictional-drug-and-disease-ref / Flutter医療リファレンスアプリ & Mock Server</summary>
