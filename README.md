@@ -107,6 +107,14 @@ css: |-
 
 </details>
 
+<details><summary>Claude Code の sandbox におけるソケット制約と Gradle ビルドの回避策</summary>
+
+- Claude Code の sandbox 環境で Gradle ビルドが `Operation not permitted` で必ず失敗する現象について、その真因と実務的な回避策を記事化しました。
+- 失敗の真因は Gradle 起動時に loopback アドレスへソケットをバインドする処理が sandbox のネットワーク制限で拒否される点にあると整理し、`dangerouslyDisableSandbox` や hook による回避方法を解説しています。
+  - [Claude Code の sandbox で Gradle ビルドが必ず落ちる理由と回避方法](https://zenn.dev/todayama_r/articles/claude-code-sandbox-gradle-build)
+
+</details>
+
 <div class="page-break"></div>
 
 ## 個人開発
