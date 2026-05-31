@@ -115,6 +115,14 @@ css: |-
 
 </details>
 
+<details><summary>Claude Design が生成した HTML に要件充足を自己検証させる仕組み</summary>
+
+- Claude Design で生成した HTML をモックではなく実装の入力契約として扱い、HTML 自身に要件を満たしているかを検証させる仕組みを記事化しました。
+- 実 DOM を測定して PASS / FAIL を自動計算する検証スクリプト、手動 PASS 記入による偽装を検出する監査ロジック、pre-commit / VRT との連携による継続的検証について解説しています。
+  - [Claude Design が作った HTML に、要件を満たしているか自己検証させる](https://zenn.dev/todayama_r/articles/claude-design-self-verifying-html)
+
+</details>
+
 <div class="page-break"></div>
 
 ## 個人開発
